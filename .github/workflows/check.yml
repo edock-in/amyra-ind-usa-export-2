@@ -1,0 +1,33 @@
+name: Check build
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild from src
+        run: sh build.sh
+      - name: Built files must match src
+        run: |
+          if ! git diff --quiet -- index.html artifact.html; then
+            echo "::error::index.html or artifact.html is out of date. Run ./build.sh and commit the result."
+            git diff --stat -- index.html artifact.html
+            exit 1
+          fi
+      - name: Scripts must parse
+        run: |
+          node -e '
+            const fs = require("fs");
+            const html = fs.readFileSync("index.html", "utf8");
+            let n = 0;
+            for (const m of html.matchAll(/<script(?: type="module")?>([\s\S]*?)<\/script>/g)) { new Function(m[1]); n++; }
+            if (n < 2) throw new Error("expected the data and app scripts, found " + n);
+            console.log("index.html ok,", n, "inline scripts");'

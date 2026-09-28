@@ -1,0 +1,26 @@
+name: Outdated rule or number
+description: A rule, form, fee, deadline or duty rate on the page is out of date.
+title: "Outdated: "
+labels: ["content"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where on the page?
+      placeholder: e.g. Step 4, Price it, Money home, Dictionary
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What does the page say, and what is correct now?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source
+      description: A link to a government or Amazon page that shows the current rule.
+      placeholder: https://
+    validations:
+      required: true

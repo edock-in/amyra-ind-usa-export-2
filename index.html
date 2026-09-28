@@ -1,0 +1,1736 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Follow a cushion cover, a pouch of pepper or a wooden toy from an Indian workshop to an American doorstep through Amazon, and the money back home.">
+<meta property="og:title" content="Goods Out, Money Home">
+<meta property="og:description" content="Follow a cushion cover, a pouch of pepper or a wooden toy from an Indian workshop to an American doorstep through Amazon, and the money back home.">
+<meta property="og:url" content="https://games.edock.io/amyra-ind-usa-export-2">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07080F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F0EB" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://games.edock.io/amyra-ind-usa-export-2">
+<title>Goods Out, Money Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Palette and type follow the Edock x Amyra export pages (Oswald + Manrope;
+   sky/cloud/ink with route red in light, ink/cream with ember in dark).
+   Controls float on a Liquid Glass layer; content inside them sits on plain fills. */
+:root{
+  color-scheme:light;
+  --paper:#F3F0EB; --stage:#F3F0EB; --card:#FFFFFF;
+  --glow1:rgba(229,54,27,.13); --glow2:rgba(242,180,90,.18); --glow3:rgba(123,63,140,.08); --dot:rgba(17,17,17,.07);
+  --ink:#111111; --muted:#5C5A57; --faint:#8A8783; --line:#E9E4DD; --line-strong:#D6CEC3;
+  --fill:rgba(255,255,255,.55); --fill-2:rgba(255,255,255,.85);
+  --india:#E5361B; --india-soft:#FCE4DE; --india-ink:#A81F0A; --india-fill:#C9280F; --on-india:#FFFFFF;
+  --sea:#7B3F8C; --sea-soft:#F1E8F4; --sea-ink:#5A2A68;
+  --abroad:#9A6A1A; --abroad-soft:#FBEED6; --abroad-ink:#76500F;
+  --warn:#B3243E; --warn-soft:#F9E3E7; --ok:#2F7D4F; --ok-soft:#E2F1E7;
+  --ocean:#E6F3FC; --ocean-edge:#A7CDE8; --land:#B5D69F; --coast:#7FAA66; --grat:#CBE2F2;
+  /* liquid glass */
+  --lg-clear:rgba(255,255,255,.3); --lg-regular:rgba(255,255,255,.6);
+  --lg-blur:22px; --lg-sat:185%;
+  --lg-rim:rgba(255,255,255,.95); --lg-rim-2:rgba(255,255,255,.45); --lg-sheen:rgba(255,255,255,.65);
+  --lg-inner:inset 0 1px 1px rgba(255,255,255,.9),inset 0 -1px 1px rgba(255,255,255,.3),inset 0 0 24px rgba(255,255,255,.22);
+  --lg-shadow:0 14px 40px -14px rgba(17,17,17,.3),0 2px 6px -2px rgba(17,17,17,.1),0 0 0 .5px rgba(17,17,17,.07);
+  --drop:rgba(255,255,255,.86); --drop-hi:rgba(255,255,255,1);
+  --shadow-float:0 30px 80px -20px rgba(17,17,17,.32),0 0 0 1px rgba(17,17,17,.05);
+  --btn-glow:0 12px 34px -10px rgba(229,54,27,.6);
+  --display:"Oswald",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1); --spring:cubic-bezier(.34,1.56,.64,1);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#07080F; --stage:#07080F; --card:#10121C;
+    --glow1:rgba(230,40,30,.22); --glow2:rgba(245,192,99,.08); --glow3:rgba(180,140,242,.08); --dot:rgba(244,241,234,.06);
+    --ink:#F4F1EA; --muted:#BBB9B5; --faint:#828181; --line:#26272E; --line-strong:#3A3B43;
+    --fill:rgba(255,255,255,.05); --fill-2:rgba(255,255,255,.1);
+    --india:#FF4A1F; --india-soft:#2B130F; --india-ink:#FF8A5C; --india-fill:#E6281E; --on-india:#FFFFFF;
+    --sea:#B48CF2; --sea-soft:#1F1930; --sea-ink:#D3BCF8;
+    --abroad:#F5C063; --abroad-soft:#2A2213; --abroad-ink:#F8D494;
+    --warn:#FF6F86; --warn-soft:#2E1219; --ok:#62C98C; --ok-soft:#12251A;
+    --ocean:#123251; --ocean-edge:#07172A; --land:#24573A; --coast:#3A7D52; --grat:#173A5C;
+    --lg-clear:rgba(30,33,48,.34); --lg-regular:rgba(16,18,30,.66);
+    --lg-rim:rgba(255,255,255,.4); --lg-rim-2:rgba(255,255,255,.1); --lg-sheen:rgba(255,255,255,.14);
+    --lg-inner:inset 0 1px 1px rgba(255,255,255,.2),inset 0 -1px 1px rgba(255,255,255,.05),inset 0 0 24px rgba(255,255,255,.04);
+    --lg-shadow:0 16px 44px -14px rgba(0,0,0,.75),0 2px 8px -2px rgba(0,0,0,.45),0 0 0 .5px rgba(0,0,0,.5);
+    --drop:rgba(255,255,255,.14); --drop-hi:rgba(255,255,255,.32);
+    --shadow-float:0 30px 80px -20px rgba(0,0,0,.8),0 0 0 1px rgba(244,241,234,.06);
+    --btn-glow:0 12px 34px -10px rgba(255,74,31,.55);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#07080F; --stage:#07080F; --card:#10121C;
+  --glow1:rgba(230,40,30,.22); --glow2:rgba(245,192,99,.08); --glow3:rgba(180,140,242,.08); --dot:rgba(244,241,234,.06);
+  --ink:#F4F1EA; --muted:#BBB9B5; --faint:#828181; --line:#26272E; --line-strong:#3A3B43;
+  --fill:rgba(255,255,255,.05); --fill-2:rgba(255,255,255,.1);
+  --india:#FF4A1F; --india-soft:#2B130F; --india-ink:#FF8A5C; --india-fill:#E6281E; --on-india:#FFFFFF;
+  --sea:#B48CF2; --sea-soft:#1F1930; --sea-ink:#D3BCF8;
+  --abroad:#F5C063; --abroad-soft:#2A2213; --abroad-ink:#F8D494;
+  --warn:#FF6F86; --warn-soft:#2E1219; --ok:#62C98C; --ok-soft:#12251A;
+  --ocean:#123251; --ocean-edge:#07172A; --land:#24573A; --coast:#3A7D52; --grat:#173A5C;
+  --lg-clear:rgba(30,33,48,.34); --lg-regular:rgba(16,18,30,.66);
+  --lg-rim:rgba(255,255,255,.4); --lg-rim-2:rgba(255,255,255,.1); --lg-sheen:rgba(255,255,255,.14);
+  --lg-inner:inset 0 1px 1px rgba(255,255,255,.2),inset 0 -1px 1px rgba(255,255,255,.05),inset 0 0 24px rgba(255,255,255,.04);
+  --lg-shadow:0 16px 44px -14px rgba(0,0,0,.75),0 2px 8px -2px rgba(0,0,0,.45),0 0 0 .5px rgba(0,0,0,.5);
+  --drop:rgba(255,255,255,.14); --drop-hi:rgba(255,255,255,.32);
+  --shadow-float:0 30px 80px -20px rgba(0,0,0,.8),0 0 0 1px rgba(244,241,234,.06);
+  --btn-glow:0 12px 34px -10px rgba(255,74,31,.55);
+}
+*{box-sizing:border-box}
+html,body{background:var(--paper)}
+body{margin:0;color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:disabled{cursor:default;opacity:.4}
+:focus-visible{outline:2px solid var(--india);outline-offset:2px;border-radius:10px}
+
+.page{padding-block:16px;padding-inline:16px;display:grid;justify-items:center;gap:12px}
+.frame{position:relative;width:min(100%,calc((100vh - 32px)*16/9));width:min(100%,calc((100dvh - 32px)*16/9));aspect-ratio:16/9;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-float);container-type:inline-size;container-name:frame;
+  background:radial-gradient(60% 55% at 100% 105%,var(--glow1),transparent 70%),radial-gradient(45% 45% at 0% 0%,var(--glow2),transparent 70%),radial-gradient(40% 40% at 70% 20%,var(--glow3),transparent 70%),radial-gradient(var(--dot) 1px,transparent 1.4px) 0 0/18px 18px,var(--stage)}
+.stage{position:absolute;inset:0}
+#map{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#map:active{cursor:grabbing}
+
+/* ---------- Liquid Glass: only on the floating control layer ---------- */
+.lg{position:relative;isolation:isolate;background:var(--lg-clear);-webkit-backdrop-filter:blur(var(--lg-blur)) saturate(var(--lg-sat));backdrop-filter:blur(var(--lg-blur)) saturate(var(--lg-sat));box-shadow:var(--lg-inner),var(--lg-shadow);border:0}
+.lg.regular{background:var(--lg-regular);--lg-blur:28px}
+.lg::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;z-index:-1;
+  background:linear-gradient(135deg,var(--lg-rim),rgba(255,255,255,0) 32%,rgba(255,255,255,0) 64%,var(--lg-rim-2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.lg::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+  background:radial-gradient(160px 110px at var(--mx,25%) var(--my,0%),var(--lg-sheen),transparent 70%);opacity:.45;transition:opacity .45s var(--ease)}
+.lg:hover::after{opacity:.85}
+.lg.regular::after{opacity:.25}.lg.regular:hover::after{opacity:.4}
+/* the selection droplet that slides between options */
+.drop{position:absolute;left:0;top:0;width:0;height:0;border-radius:999px;pointer-events:none;z-index:0;opacity:0;background:var(--drop);
+  box-shadow:inset 0 1px 1px var(--drop-hi),inset 0 -1px 1px rgba(255,255,255,.15),0 6px 16px -8px rgba(17,17,17,.35);
+  transition:transform .55s var(--spring),width .55s var(--spring),opacity .3s var(--ease)}
+
+/* eyebrow: Oswald caps with a short leading rule */
+.eye,.cap .ce,.where,.part-n,.panel h3,.kv b{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.2em}
+.eye,.cap .ce{display:inline-flex;align-items:center;gap:10px;color:var(--india);font-size:clamp(10px,.7cqw,13px)}
+.eye::before,.cap .ce::before{content:"";width:22px;height:1px;background:currentColor;flex:none}
+
+/* top bar */
+.hud{position:absolute;z-index:6;top:1.4cqw;left:1.8cqw;right:1.5cqw;display:flex;justify-content:space-between;align-items:flex-start;gap:1.2cqw;pointer-events:none}
+.hud>*{pointer-events:auto}
+.brand h1{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(16px,1.7cqw,31px);letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.brand p{margin:.5cqw 0 0;font-size:clamp(11px,.76cqw,14px);color:var(--muted);max-width:34cqw;line-height:1.45}
+.picks{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.55cqw}
+.seg{display:inline-flex;gap:2px;border-radius:999px;padding:4px}
+.seg button{position:relative;z-index:1;border:0;background:transparent;border-radius:999px;padding:.36cqw .95cqw;font-size:clamp(11px,.8cqw,14px);font-weight:600;display:inline-flex;align-items:center;gap:.4cqw;color:var(--muted);white-space:nowrap;transition:color .3s var(--ease),transform .3s var(--spring)}
+.seg button:hover{color:var(--ink)}
+.seg button:active{transform:scale(.94)}
+.seg button[aria-pressed="true"]{color:var(--ink)}
+.seg svg,.themebtn svg{width:clamp(14px,1.05cqw,19px);height:clamp(14px,1.05cqw,19px);flex:none}
+.themebtn{display:inline-flex;align-items:center;gap:.4cqw;border-radius:999px;padding:.36cqw 1cqw;font-size:clamp(11px,.8cqw,14px);font-weight:600;color:var(--ink);transition:transform .3s var(--spring)}
+.themebtn:active{transform:scale(.94)}
+
+/* side sheet: regular glass, content scrolls inside with a soft edge fade */
+.sheet{position:absolute;z-index:5;top:5.6cqw;right:1.5cqw;bottom:1.5cqw;width:28.5cqw;border-radius:26px;overflow:hidden;transition:opacity .45s var(--ease),transform .45s var(--ease),visibility 0s}
+.touring .sheet{opacity:0;transform:translateX(3cqw) scale(.98);pointer-events:none;visibility:hidden;transition:opacity .45s var(--ease),transform .45s var(--ease),visibility 0s .45s}
+.panel{position:absolute;inset:0;z-index:1;overflow:auto;overscroll-behavior:contain;padding:1.35cqw 1.4cqw 1.6cqw;font-size:clamp(12px,.88cqw,16px);line-height:1.55;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 14px,#000 calc(100% - 22px),transparent 100%)}
+.panel h2{font-family:var(--display);font-weight:600;font-size:clamp(18px,1.55cqw,29px);line-height:1.12;margin:.35cqw 0 .45cqw;text-wrap:balance}
+.panel h3{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:clamp(10px,.66cqw,12px);color:var(--muted);margin:1.1cqw 0 .45cqw}
+.panel p{margin:0 0 .6em}
+.lede{color:var(--muted)}
+.psub{color:var(--muted);font-size:.9em}
+
+/* dock: a glass tab bar with a droplet selection, and a tinted glass Play button */
+.dock{position:absolute;z-index:6;bottom:1.4cqw;left:35cqw;transform:translateX(-50%);display:flex;align-items:stretch;gap:5px;border-radius:26px;padding:5px;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.tabs{position:relative;display:flex;gap:2px}
+.tabs .drop{border-radius:21px}
+.tab{position:relative;z-index:1;border:0;background:transparent;border-radius:21px;padding:.45cqw .8cqw;display:grid;justify-items:center;gap:.15cqw;font-size:clamp(10px,.7cqw,13px);font-weight:600;color:var(--muted);min-width:4.9cqw;white-space:nowrap;transition:color .3s var(--ease),transform .3s var(--spring)}
+.tab svg{width:clamp(15px,1.25cqw,22px);height:clamp(15px,1.25cqw,22px)}
+.tab:hover{color:var(--ink)}
+.tab:active{transform:scale(.92)}
+.tab[aria-selected="true"]{color:var(--india)}
+.play{position:relative;isolation:isolate;overflow:hidden;border:0;border-radius:21px;color:var(--on-india);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--india) 90%,transparent),color-mix(in srgb,var(--india-fill) 94%,transparent));
+  -webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.55),inset 0 -1px 1px rgba(0,0,0,.12),inset 0 0 18px rgba(255,255,255,.12),var(--btn-glow);
+  font-family:var(--display);font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:clamp(13px,1cqw,18px);padding:0 1.5cqw;display:inline-flex;align-items:center;gap:.55cqw;transition:transform .35s var(--spring),filter .3s var(--ease)}
+.play::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:radial-gradient(120px 70px at var(--mx,30%) var(--my,0%),rgba(255,255,255,.4),transparent 70%);opacity:.6;transition:opacity .3s var(--ease)}
+.play:hover{filter:brightness(1.06)}
+.play:hover::after{opacity:1}
+.play:active{transform:scale(.95)}
+.play svg{width:clamp(11px,.85cqw,15px);height:clamp(11px,.85cqw,15px)}
+.touring .dock{opacity:0;transform:translate(-50%,1.5cqw) scale(.97);pointer-events:none}
+
+/* captions: content, so no glass; a soft halo keeps them legible over the globe */
+.cap{position:absolute;z-index:4;left:2cqw;width:66cqw;bottom:6.8cqw;display:grid;justify-items:center;text-align:center;gap:.5cqw;pointer-events:none;transition:left .6s var(--ease),width .6s var(--ease),bottom .6s var(--ease)}
+.touring .cap{left:8cqw;width:84cqw;bottom:4.8cqw}
+.cap .ce{text-shadow:0 0 .6cqw var(--stage)}
+.cap .cl{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.15cqw,40px);line-height:1.1;max-width:48cqw;text-wrap:balance;color:var(--ink);text-shadow:0 0 1.2cqw var(--stage),0 0 .35cqw var(--stage)}
+.touring .cap .cl{font-size:clamp(22px,2.85cqw,54px);max-width:60cqw}
+.cap .cs{font-size:clamp(12px,.95cqw,17px);color:var(--muted);max-width:46cqw;text-wrap:balance;text-shadow:0 0 .8cqw var(--stage),0 0 .3cqw var(--stage)}
+.cap .cs:empty,.cap .ce:empty{display:none}
+.cap.swap .ce,.cap.swap .cl,.cap.swap .cs{animation:capin .6s var(--ease) both}
+.cap.swap .cl{animation-delay:.08s}.cap.swap .cs{animation-delay:.16s}
+@keyframes capin{from{opacity:0;transform:translateY(.6cqw)}to{opacity:1;transform:none}}
+
+/* tour context card */
+.ctx{position:absolute;z-index:5;top:5.6cqw;right:1.5cqw;width:23cqw;border-radius:24px;padding:1.1cqw 1.2cqw;font-size:clamp(11px,.84cqw,15px);line-height:1.5;opacity:0;transform:translateY(-.8cqw) scale(.97);transform-origin:top right;transition:opacity .45s var(--ease),transform .55s var(--spring);pointer-events:none}
+.ctx.on{opacity:1;transform:none}
+.ctx>*{position:relative;z-index:3}
+.ctx .t{font-family:var(--display);font-weight:600;font-size:clamp(15px,1.25cqw,23px);line-height:1.15;margin:.3cqw 0 .55cqw}
+.ctx p{margin:.4em 0 0}
+
+/* tour controls */
+.tourbar{position:absolute;z-index:6;left:50%;bottom:1.3cqw;transform:translateX(-50%);display:flex;align-items:center;gap:.4cqw;border-radius:999px;padding:4px 7px;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+.touring .tourbar{opacity:1;pointer-events:auto}
+.touring.idle .tourbar{opacity:0}
+.touring.idle,.touring.idle #map{cursor:none}
+.tourbar button{position:relative;z-index:3;border:0;background:transparent;width:clamp(28px,2.1cqw,38px);height:clamp(28px,2.1cqw,38px);border-radius:50%;display:grid;place-items:center;color:var(--ink);transition:background .25s var(--ease),transform .3s var(--spring)}
+.tourbar button:hover{background:var(--fill-2)}
+.tourbar button:active{transform:scale(.9)}
+.tourbar svg{width:55%;height:55%}
+.dots{position:relative;z-index:3;display:flex;gap:3px;align-items:center;padding-inline:.3cqw}
+.dots i{display:block;width:clamp(5px,.45cqw,9px);height:4px;border-radius:2px;background:var(--line-strong);transition:width .4s var(--spring),background .3s var(--ease)}
+.dots i.done{background:var(--faint)}
+.dots i.on{background:var(--india);width:clamp(14px,1.2cqw,22px)}
+
+.loading{position:absolute;inset:0;display:grid;place-items:center;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted);pointer-events:none;transition:opacity .6s var(--ease)}
+.loading.done{opacity:0}
+
+/* ---------- content inside the sheet: plain fills, never glass on glass ---------- */
+[data-side="india"]{--c:var(--india);--cs:var(--india-soft);--ci:var(--india-ink)}
+[data-side="sea"]{--c:var(--sea);--cs:var(--sea-soft);--ci:var(--sea-ink)}
+[data-side="abroad"]{--c:var(--abroad);--cs:var(--abroad-soft);--ci:var(--abroad-ink)}
+[data-side="ok"]{--c:var(--ok);--cs:var(--ok-soft);--ci:var(--ok)}
+.pcard{border:1px solid var(--line);background:var(--fill);border-radius:18px;padding:.95cqw 1.05cqw;display:grid;gap:.6cqw;margin-top:.5cqw}
+.prow{display:flex;align-items:center;gap:.7cqw}
+.pico{width:2.5cqw;height:2.5cqw;min-width:32px;min-height:32px;border-radius:12px;display:grid;place-items:center;background:var(--india-soft);color:var(--india-ink);flex:none}
+.pico svg{width:62%;height:62%}
+.pname{font-family:var(--display);font-weight:500;font-size:clamp(15px,1.2cqw,22px);line-height:1.15}
+.chips{display:flex;flex-wrap:wrap;gap:.35cqw}
+.chip{font-size:clamp(10px,.66cqw,12px);font-weight:600;font-variant-numeric:tabular-nums;padding:.12cqw .6cqw;border-radius:999px;border:1px solid var(--line-strong);color:var(--muted);white-space:nowrap}
+.chip.warn{border-color:color-mix(in srgb,var(--warn) 45%,transparent);color:var(--warn);background:var(--warn-soft)}
+.chip.ok{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);background:var(--ok-soft)}
+.bar{height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--india),var(--sea) 55%,var(--abroad));border-radius:99px;transition:width .5s var(--spring)}
+.part{margin-top:1.05cqw}
+.part-h{display:flex;gap:.55cqw;align-items:baseline;margin-bottom:.3cqw}
+.part-n{font-size:clamp(9px,.62cqw,11px);color:var(--india);white-space:nowrap}
+.part-t{font-family:var(--display);font-weight:500;font-size:clamp(13px,.98cqw,17px);line-height:1.2}
+.srow{width:100%;text-align:left;border:1px solid transparent;background:transparent;border-radius:16px;padding:.45cqw .55cqw;display:grid;grid-template-columns:minmax(22px,2.1cqw) 1fr auto;gap:.6cqw;align-items:center;transition:background .28s var(--ease),border-color .28s var(--ease),transform .3s var(--spring)}
+.srow:hover{background:var(--fill-2);border-color:var(--line)}
+.srow:active{transform:scale(.98)}
+.srow .n{font-family:var(--display);font-weight:600;font-size:clamp(15px,1.2cqw,22px);color:var(--c);text-align:center;font-variant-numeric:tabular-nums}
+.srow .tt{font-weight:700;line-height:1.25;display:block}
+.srow .ww{display:block;font-size:.84em;color:var(--muted);font-weight:500}
+.srow .ck{width:1.2cqw;height:1.2cqw;min-width:16px;min-height:16px;border-radius:50%;border:1.5px solid var(--line-strong);display:grid;place-items:center;font-size:.7em;color:transparent}
+.srow.done .ck{background:var(--ok);border-color:var(--ok);color:var(--card)}
+.srow.done .tt{text-decoration:line-through;text-decoration-color:var(--faint)}
+.back{border:0;background:transparent;color:var(--muted);padding:0;font-size:.9em;font-weight:600}
+.back:hover{color:var(--ink)}
+.where{display:inline-block;font-size:clamp(9px,.64cqw,12px);color:var(--c)}
+.note,.analogy,.watch{border-radius:16px;padding:.75cqw .9cqw;margin:.6cqw 0}
+.note{background:var(--cs);color:var(--ci)}
+.note ul{margin:.3em 0 .2em;padding-left:1.2em}
+.analogy{background:var(--sea-soft);color:var(--sea-ink)}
+.watch{background:var(--warn-soft);color:var(--warn)}
+.jar{margin:0}
+.jar div{display:grid;grid-template-columns:minmax(64px,7.5cqw) 1fr;gap:.6cqw;padding:.45cqw 0;border-top:1px dashed var(--line-strong)}
+.jar div:first-child{border-top:0}
+.jar dt{font-size:.84em;color:var(--c);font-weight:800;word-break:break-word}
+.jar dd{margin:0;font-size:.95em}
+.looks{display:flex;flex-wrap:wrap;gap:.35cqw;align-items:center;margin-top:.5cqw}
+.tagl{font-size:.8em;font-weight:700;border:1px solid color-mix(in srgb,var(--sea) 35%,transparent);background:var(--sea-soft);color:var(--sea-ink);border-radius:999px;padding:.1em .65em;transition:transform .3s var(--spring)}
+.tagl:active{transform:scale(.94)}
+.donebox{display:flex;align-items:center;gap:.5cqw;margin-top:.9cqw;padding-top:.7cqw;border-top:1px solid var(--line);cursor:pointer;font-weight:600}
+.donebox input{width:18px;height:18px;accent-color:var(--ok);margin:0}
+.nav2{display:flex;justify-content:space-between;gap:.5cqw;margin-top:.8cqw}
+.btn{border:1px solid var(--line-strong);background:var(--fill);border-radius:999px;padding:.38cqw 1cqw;font-size:.88em;font-weight:700;text-transform:none;letter-spacing:0;font-family:var(--body);color:var(--ink);transition:border-color .28s var(--ease),background .28s var(--ease),transform .3s var(--spring)}
+.btn:hover:not(:disabled){border-color:var(--ink);background:var(--fill-2)}
+.btn:active:not(:disabled){transform:scale(.95)}
+.btn.pri{background:linear-gradient(135deg,var(--india) 0%,var(--india-fill) 100%);color:var(--on-india);border-color:transparent;box-shadow:inset 0 1px 1px rgba(255,255,255,.45),var(--btn-glow)}
+.btn.pri:hover:not(:disabled){filter:brightness(1.07);border-color:transparent;background:linear-gradient(135deg,var(--india) 0%,var(--india-fill) 100%)}
+.fit{display:grid;gap:.25cqw;margin-top:.4cqw}
+.fit div{display:flex;gap:.5cqw;align-items:center}
+.mk{width:1.1cqw;height:1.1cqw;min-width:15px;min-height:15px;border-radius:50%;display:grid;place-items:center;font-size:.72em;font-weight:800;flex:none}
+.mk.y{background:var(--ok-soft);color:var(--ok)}.mk.n{background:var(--warn-soft);color:var(--warn)}
+
+/* break it */
+.brkwrap{margin-bottom:.45cqw}
+.brk{width:100%;text-align:left;border:1px solid var(--line);background:var(--fill);border-radius:16px;padding:.55cqw .75cqw;display:grid;grid-template-columns:auto 1fr;gap:.6cqw;align-items:center;font-weight:600;transition:border-color .28s var(--ease),background .28s var(--ease),transform .3s var(--spring)}
+.brk:hover{border-color:var(--warn);background:var(--fill-2)}
+.brk:active{transform:scale(.98)}
+.brk[aria-pressed="true"]{border-color:var(--warn);background:var(--warn-soft)}
+.brk .sn{font-size:.76em;font-weight:700;color:var(--c);border:1px solid var(--c);border-radius:999px;padding:0 .5em;white-space:nowrap}
+
+/* price it */
+.big{font-family:var(--display);font-weight:600;font-size:clamp(28px,2.7cqw,50px);line-height:1;font-variant-numeric:tabular-nums;color:var(--ok)}
+.big.neg{color:var(--warn)}
+.kpi{display:flex;align-items:baseline;gap:.8cqw;flex-wrap:wrap;margin:.3cqw 0 .2cqw}
+.stack{display:flex;height:clamp(14px,1.2cqw,22px);border-radius:999px;overflow:hidden;margin:.6cqw 0 .5cqw;background:var(--line)}
+.stack i{display:block;height:100%;transition:width .35s var(--spring)}
+.legend{display:grid;grid-template-columns:auto 1fr auto;gap:.2cqw .55cqw;font-size:.86em;align-items:center}
+.legend .sw{width:10px;height:10px;border-radius:3px}
+.legend .v{font-weight:700;font-variant-numeric:tabular-nums;font-size:.95em}
+.chart{margin-top:.6cqw}
+.chart svg{width:100%;height:auto;display:block}
+.fld{display:grid;grid-template-columns:1fr auto;gap:.15cqw .6cqw;align-items:center;padding:.4cqw 0;border-top:1px dashed var(--line-strong)}
+.fld label{font-size:.92em;font-weight:600}
+.fld output{font-size:.9em;font-weight:800;font-variant-numeric:tabular-nums}
+.fld input[type=range]{grid-column:1/-1;width:100%;accent-color:var(--india);margin:.1cqw 0 0}
+.fld small{grid-column:1/-1;color:var(--muted);font-size:.8em;line-height:1.35}
+
+/* money home */
+.chain{display:grid;gap:.3cqw;margin:.5cqw 0}
+.link{display:grid;grid-template-columns:auto 1fr auto;gap:.6cqw;align-items:center;padding:.45cqw .7cqw;border-radius:14px;background:var(--fill);border:1px solid var(--line);font-weight:500}
+.link .ic{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.link .v{font-weight:800;font-size:.9em;font-variant-numeric:tabular-nums}
+.clock svg{width:100%;height:auto;display:block}
+.status{border-radius:16px;padding:.65cqw .85cqw;margin-top:.5cqw;font-weight:700}
+.status.open{background:var(--india-soft);color:var(--india-ink)}
+.status.closed{background:var(--ok-soft);color:var(--ok)}
+.status.late{background:var(--warn-soft);color:var(--warn)}
+.panel input[type=range]{width:100%;accent-color:var(--india)}
+
+/* dictionary */
+.search{display:flex;align-items:center;gap:.5cqw;border:1px solid var(--line-strong);background:var(--fill-2);border-radius:999px;padding:.45cqw .9cqw;margin:.4cqw 0 .6cqw}
+.search svg{width:18px;height:18px;color:var(--muted);flex:none}
+.search input{border:0;background:transparent;outline:none;flex:1;min-width:0}
+.term{border-top:1px dashed var(--line-strong);padding:.55cqw .45cqw;border-radius:12px;scroll-margin:24px}
+.term.hit{background:var(--india-soft)}
+.term .k{font-weight:800;font-size:.95em;color:var(--c)}
+.term .f{font-size:.8em;color:var(--muted);font-weight:600}
+
+/* stamps and context cards */
+.stamps{display:flex;flex-wrap:wrap;gap:.55cqw;margin-top:.4cqw}
+.stamp{--r:-3deg;display:inline-block;font-family:var(--display);font-weight:600;font-size:clamp(10px,.72cqw,13px);letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--ink));border:2px solid var(--c,var(--ink));border-radius:8px;padding:.2cqw .55cqw;transform:rotate(var(--r));box-shadow:inset 0 0 0 2px var(--card),inset 0 0 0 3px color-mix(in srgb,var(--c,var(--ink)) 60%,transparent);background:var(--card)}
+.stamp:nth-child(2n){--r:2deg}.stamp:nth-child(3n){--r:-1deg}
+.stamp.land{animation:thunk .5s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes thunk{from{transform:scale(1.9) rotate(var(--r));opacity:0}to{transform:scale(1) rotate(var(--r));opacity:1}}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.3cqw .75cqw;align-items:baseline}
+.kv b{font-size:.74em;color:var(--muted);letter-spacing:.14em;white-space:nowrap}
+.order{display:grid;gap:.4cqw;counter-reset:o}
+.order div{display:flex;gap:.55cqw;align-items:center;font-weight:600}
+.order div::before{counter-increment:o;content:counter(o);width:1.45cqw;height:1.45cqw;min-width:19px;min-height:19px;flex:none;border-radius:50%;background:linear-gradient(135deg,var(--india),var(--india-fill));color:var(--on-india);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:.8em}
+.legend3{display:grid;gap:.35cqw}
+.legend3 div{display:flex;align-items:center;gap:.6cqw;font-weight:600}
+.legend3 .n{font-family:var(--display);font-weight:600;font-size:1.6em;color:var(--c);min-width:1.4em;text-align:right;font-variant-numeric:tabular-nums}
+
+.promo{margin-top:1.1cqw;border-radius:18px;padding:1cqw 1.05cqw;background:var(--fill);border:1px solid color-mix(in srgb,var(--india) 35%,var(--line));display:grid;gap:.55cqw}
+.promo p{margin:0;font-weight:600}
+.ctx .promo{margin:0;padding:0;border:0;background:none}
+.ctx.on:has(.cta){pointer-events:auto}
+.ev{display:flex;gap:.7cqw;align-items:center}
+.cal{width:3cqw;min-width:40px;border-radius:12px;overflow:hidden;text-align:center;background:var(--card);border:1px solid var(--line);flex:none}
+.cal b{display:block;background:linear-gradient(135deg,var(--india),var(--india-fill));color:var(--on-india);font-family:var(--display);font-weight:600;font-size:.72em;letter-spacing:.12em;padding:2px 0}
+.cal span{display:block;font-family:var(--display);font-weight:600;font-size:1.5em;line-height:1.3}
+.ev-t{font-family:var(--display);font-weight:500;font-size:1.08em;line-height:1.2}
+.cta{display:inline-flex;justify-content:center;align-items:center;gap:.4em;border-radius:999px;padding:.55cqw 1.1cqw;min-height:40px;background:linear-gradient(135deg,var(--india),var(--india-fill));color:var(--on-india);box-shadow:inset 0 1px 1px rgba(255,255,255,.45),var(--btn-glow);font-family:var(--display);font-weight:500;font-size:1.05em;letter-spacing:.04em;text-decoration:none;transition:transform .3s var(--spring),filter .3s var(--ease)}
+.cta:hover{filter:brightness(1.07)}
+.cta:active{transform:scale(.96)}
+.foot a{color:var(--ink);font-weight:700}
+.foot{width:min(100%,calc((100vh - 32px)*16/9));width:min(100%,calc((100dvh - 32px)*16/9));color:var(--muted);font-size:13px;line-height:1.55;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+.foot p{margin:0;max-width:80ch}
+
+/* accessibility: honour Reduce Transparency and Increase Contrast like iOS does */
+@media (prefers-reduced-transparency:reduce){
+  .lg,.lg.regular{background:var(--card);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .lg::after,.play::after{display:none}
+}
+@media (prefers-contrast:more){
+  .lg{box-shadow:0 0 0 1.5px var(--ink),var(--lg-shadow)}
+  .lg.regular{background:var(--card)}
+}
+
+@media (max-width:760px){
+  .frame{aspect-ratio:auto;width:100%;display:flex;flex-direction:column;overflow:visible;background:transparent;border:0;box-shadow:none;border-radius:0}
+  .hud{position:static;order:0;padding:0 0 10px;flex-direction:column;gap:10px}
+  .brand p{max-width:none}
+  .picks{justify-content:flex-start}
+  .stage{position:relative;inset:auto;order:1;aspect-ratio:16/9;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-float);
+    background:radial-gradient(60% 55% at 100% 105%,var(--glow1),transparent 70%),radial-gradient(var(--dot) 1px,transparent 1.4px) 0 0/14px 14px,var(--stage)}
+  #map{touch-action:pan-y}
+  .dock{position:relative;left:auto;bottom:auto;order:2;transform:none;margin-top:10px;flex-wrap:wrap;justify-content:center}
+  .tabs{flex:1 1 100%;justify-content:space-between}
+  .tab{min-width:0;flex:1;padding:6px 4px}
+  .play{flex:1 1 100%;justify-content:center;padding:11px 14px}
+  .sheet{position:relative;inset:auto;order:3;width:auto;margin-top:10px;overflow:visible;border-radius:22px}
+  .panel{position:relative;inset:auto;overflow:visible;padding:14px;-webkit-mask-image:none;mask-image:none}
+  .cap,.touring .cap{left:3%;width:94%;bottom:5%}
+  .touring .cap{bottom:17%}
+  .cap .cl,.touring .cap .cl{font-size:16px;max-width:none}
+  .cap .cs,.ctx{display:none}
+  .touring .sheet,.touring .dock{display:none}
+  .tourbar{bottom:3%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="page">
+  <div class="frame" id="app">
+    <header class="hud">
+      <div class="brand">
+        <h1>Goods out, money home</h1>
+        <p>How one product leaves an Indian workshop, reaches an American doorstep through Amazon, and how the money and the proof come back.</p>
+      </div>
+      <div class="picks">
+        <div class="seg lg" id="prodSeg" role="group" aria-label="Choose a product"></div>
+        <div class="seg lg" id="modeSeg" role="group" aria-label="Ship the goods">
+          <span class="drop" aria-hidden="true"></span>
+          <button type="button" data-mode="sea" aria-pressed="true">By sea</button>
+          <button type="button" data-mode="air" aria-pressed="false">By air</button>
+        </div>
+        <button type="button" class="themebtn lg" id="themeBtn" aria-label="Switch theme"></button>
+      </div>
+    </header>
+
+    <div class="stage" id="stage">
+      <canvas id="map" role="img" aria-label="A globe showing the product's route from India to the United States, and the money's route back"></canvas>
+      <div class="loading" id="loading">Drawing the globe…</div>
+      <div class="cap" id="cap" aria-live="polite">
+        <div class="ce" id="capE"></div>
+        <div class="cl" id="capL"></div>
+        <div class="cs" id="capS"></div>
+      </div>
+      <div class="ctx lg regular" id="ctx" aria-live="polite"></div>
+      <div class="tourbar lg" id="tourbar">
+        <button type="button" id="tPrev" aria-label="Previous scene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" id="tPause" aria-label="Pause"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5v14M15 5v14"/></svg></button>
+        <button type="button" id="tNext" aria-label="Next scene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="dots" id="tDots" aria-hidden="true"></div>
+        <button type="button" id="tExit" aria-label="Leave the story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+    </div>
+
+    <nav class="dock lg" id="dock" aria-label="Views">
+      <div class="tabs" role="tablist" id="tabs">
+        <span class="drop" aria-hidden="true"></span>
+        <button type="button" class="tab" role="tab" data-tab="journey" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="5.5" r="2"/><path d="M7.5 18.5h7a3.2 3.2 0 0 0 0-6.4h-5a3.2 3.2 0 0 1 0-6.4h7"/></svg>Journey</button>
+        <button type="button" class="tab" role="tab" data-tab="break" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2.5 4.5 14H11l-1 7.5L19.5 10H13z"/></svg>Break it</button>
+        <button type="button" class="tab" role="tab" data-tab="price" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3.5 12.5V4h8.5l9 9-8.5 8.5z"/><circle cx="8" cy="8.5" r="1.4"/></svg>Price it</button>
+        <button type="button" class="tab" role="tab" data-tab="money" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5"/><path d="M20 3.5v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.5"/><path d="M4 20.5v-5h5"/></svg>Money home</button>
+        <button type="button" class="tab" role="tab" data-tab="dict" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"/><path d="M9 7.5h6"/></svg>Dictionary</button>
+      </div>
+      <button type="button" class="play" id="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="currentColor"/></svg>Play</button>
+    </nav>
+
+    <aside class="sheet lg regular" id="sheet"><div class="panel" id="panel"></div></aside>
+  </div>
+
+  <footer class="foot">
+    <p>Built from the guide “Made in India, Sold on Amazon”. The example market is the United States. Routes, prices, fees and duty rates are examples, and the rules change often. Treat this as a map, not as legal, tax or customs advice.</p>
+    <p>Made by <a href="https://edock.io/?utm_source=amyra-ind-usa-export-2&amp;utm_medium=game&amp;utm_campaign=edock-games&amp;utm_content=footer" target="_blank" rel="noopener">Edock</a> · <a href="https://github.com/edock-in/amyra-ind-usa-export-2" target="_blank" rel="noopener">Open source on GitHub</a> · Coastlines: Natural Earth</p>
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+/* ---------- Places, routes, products ---------- */
+window.G = window.G || {};
+(function (G) {
+  // [longitude, latitude]
+  G.PLACES = {
+    delhi: [77.21, 28.61],       // DGFT, New Delhi
+    uspto: [-77.06, 38.80],      // Alexandria, Virginia
+    irs: [-77.03, 38.89],        // Washington, DC
+    nynj: [-74.14, 40.68],       // Port of New York and New Jersey
+    jfk: [-73.78, 40.64],
+    fba: [-74.62, 40.21],        // an Amazon warehouse in New Jersey (Amazon picks the real one)
+    customer: [-83.00, 39.96]    // Columbus, Ohio
+  };
+  G.CUSTOMER = { name: "Columbus, Ohio", short: "Columbus", tz: "America/New_York" };
+
+  // Links to edock.io carry utm tags with this id, so Edock can see which game sent each visitor.
+  G.GAME_ID = "amyra-ind-usa-export-2";
+  // The live Edock session promoted at the end. After endsAt, the invite points to all upcoming sessions.
+  G.SESSION = {
+    title: "India to USA: Your first export on Amazon",
+    host: "With Nishant Chaudhary, Business Head, Amyra Farms",
+    when: "Fri, 2 Oct · 7:00 to 8:30 PM IST · Zoom",
+    month: "OCT", day: "2",
+    url: "https://edock.io/guest/community?event=india-to-usa-your-first-export-on-amazon&tab=events",
+    campaign: "india-to-usa-first-export-2oct",
+    endsAt: "2026-10-02T20:30:00+05:30",
+    allUrl: "https://edock.io/guest/community?tab=events",
+    allCampaign: "edock-sessions"
+  };
+
+  // Illustrative sea lane: Arabian Sea, Gulf of Aden, Red Sea, Suez, Mediterranean, Atlantic
+  var RED_MED = [[54.0, 14.0], [45.5, 12.2], [43.35, 12.6], [41.8, 15.0], [38.8, 20.0], [36.2, 24.0], [34.3, 27.2], [33.0, 28.8], [32.56, 29.95], [32.31, 31.26], [32.3, 31.6], [30.0, 32.6], [27.5, 33.4], [25.0, 33.9], [18.0, 35.5], [11.6, 37.3], [6.5, 37.8], [-1.5, 36.2], [-5.6, 35.95], [-9.8, 36.4], [-35.0, 38.5], [-60.0, 40.2], [-73.85, 40.45], [-74.08, 40.62], [-74.14, 40.68]];
+  G.LANES = {
+    nhava: [[72.95, 18.95], [70.0, 18.0], [62.0, 16.0]].concat(RED_MED),
+    kochi: [[76.26, 9.97], [75.2, 9.4], [73.0, 9.1], [68.0, 11.0], [62.0, 13.2]].concat(RED_MED),
+    chennai: [[80.30, 13.10], [81.2, 11.0], [82.3, 8.5], [81.9, 6.3], [80.6, 5.6], [78.5, 5.9], [76.0, 7.6], [73.0, 8.0], [68.0, 10.5], [62.0, 13.2]].concat(RED_MED)
+  };
+
+  G.CLUSTERS = [
+    { id: "moradabad", name: "Moradabad", what: "brass", ll: [78.78, 28.84] },
+    { id: "panipat", name: "Panipat", what: "home textiles", ll: [76.97, 29.39] },
+    { id: "kanpur", name: "Kanpur", what: "leather", ll: [80.33, 26.45] },
+    { id: "guntur", name: "Guntur", what: "spices", ll: [80.44, 16.31] },
+    { id: "channapatna", name: "Channapatna", what: "wooden toys", ll: [77.21, 12.65] },
+    { id: "tiruppur", name: "Tiruppur", what: "textiles", ll: [77.34, 11.11] },
+    { id: "kerala", name: "Kerala", what: "spices", ll: [76.27, 9.93] }
+  ];
+
+  var ICON = {
+    cushion: '<path d="M4.5 6.5c3 1.2 12 1.2 15 0 1.2 3 1.2 8 0 11-3-1.2-12-1.2-15 0-1.2-3-1.2-8 0-11z"/><path d="M8.5 12h7" opacity=".55"/>',
+    pepper: '<circle cx="8" cy="15" r="3.3"/><circle cx="15.6" cy="14.2" r="3.3"/><circle cx="11.6" cy="7.8" r="3.3"/>',
+    toy: '<path d="M12 2.6v2.8"/><ellipse cx="12" cy="8.3" rx="3" ry="1.7"/><ellipse cx="12" cy="12.7" rx="4.6" ry="2.1"/><ellipse cx="12" cy="17.9" rx="6.4" ry="2.5"/>'
+  };
+
+  G.PRODUCTS = {
+    cushion: {
+      id: "cushion", icon: ICON.cushion, name: "Cotton cushion cover", short: "Cushion cover", plural: "cushion covers",
+      a: "A cotton cushion cover", kind: "For the home", cluster: "panipat",
+      maker: { name: "Panipat", region: "Haryana", ll: [76.97, 29.39], note: "Panipat is one of India's big home-textile towns." },
+      farm: null,
+      inland: [[75.80, 26.91], [72.58, 23.02]],
+      port: { name: "Nhava Sheva", sub: "Mumbai", ll: [72.95, 18.95] }, lane: "nhava",
+      airport: { name: "Delhi airport", code: "DEL", ll: [77.10, 28.56] },
+      tm: ["24", "Textiles and household linen"],
+      hs: ["6304.92", "cotton furnishing articles"],
+      fit: [["Small and light", 1], ["Hard to break", 1], ["Not too cheap", 1], ["Few rules abroad", 1]],
+      pick: "Light, flat, hard to break, and few rules. A textbook first product.",
+      brand: "Weave or print the brand into a sewn-in label.",
+      rules: {
+        level: "Light", pin: null, gated: false,
+        line: "The US asks for little: a label with the fibre, how to wash it, and “Made in India”.",
+        items: ["A label naming the fibre, like “100% cotton”", "Washing instructions", "“Made in India” on the product or its packaging"]
+      },
+      keywords: "Americans search for a “throw pillow cover”, not a “cushion cover”.",
+      claims: null, extraIndia: null, shipNote: null,
+      price: { price: 24.99, unit: "set of two covers", cost: 350, ship: 0.9, duty: 20, ref: 15, fba: 4.3, ads: 2.5, conv: 2, fx: 88 }
+    },
+    pepper: {
+      id: "pepper", icon: ICON.pepper, name: "Whole black pepper", short: "Black pepper", plural: "pouches",
+      a: "A pouch of whole black pepper", kind: "Something you eat", cluster: "kerala",
+      maker: { name: "Kochi", region: "Kerala", ll: [76.27, 9.93], note: "Pepper grows in Kerala's hills, and the packers work in Kochi." },
+      farm: { name: "Idukki hills", ll: [77.0, 9.85] },
+      inland: [],
+      port: { name: "Kochi port", sub: "Kerala", ll: [76.26, 9.97] }, lane: "kochi",
+      airport: { name: "Kochi airport", code: "COK", ll: [76.40, 10.15] },
+      tm: ["30", "Coffee, tea, spices and staple foods"],
+      hs: ["0904.11", "pepper, neither crushed nor ground"],
+      fit: [["Small and light", 1], ["Hard to break", 1], ["Not too cheap", 0], ["Few rules abroad", 0]],
+      pick: "Light and tough, but it is food. The rules get strict, and cheap items leave little profit.",
+      brand: "Print the brand on the pouch or the tin.",
+      rules: {
+        level: "Strict", gated: true,
+        pin: { name: "FDA", sub: "Silver Spring, Maryland · food", ll: [-76.98, 39.04] },
+        line: "Food answers to the FDA: a registered facility, a US agent, and a notice before every shipment.",
+        items: ["The packing facility registers with the FDA, renewed every two years", "A US Agent: a US-based contact the FDA can call", "Prior Notice filed before every shipment arrives", "A label in the US food format"]
+      },
+      keywords: "US shoppers type “whole black peppercorns”, and gourmet buyers look for the Tellicherry grade.",
+      claims: "“Organic” on the label needs certification.",
+      extraIndia: "Spice exporters also register with the Spices Board of India, which issues a certificate called CRES.",
+      shipNote: "Your forwarder or broker files the FDA Prior Notice before the goods arrive.",
+      price: { price: 12.99, unit: "8 oz pouch", cost: 230, ship: 0.45, duty: 20, ref: 8, fba: 3.4, ads: 1.5, conv: 2, fx: 88 }
+    },
+    toy: {
+      id: "toy", icon: ICON.toy, name: "Wooden stacking toy", short: "Wooden toy", plural: "toys",
+      a: "A lacquered wooden stacking toy", kind: "Something for a child", cluster: "channapatna",
+      maker: { name: "Channapatna", region: "Karnataka", ll: [77.21, 12.65], note: "Channapatna is India's toy town, known for lacquered wooden toys." },
+      farm: null,
+      inland: [[77.59, 12.97], [79.13, 12.92]],
+      port: { name: "Chennai port", sub: "Tamil Nadu", ll: [80.30, 13.10] }, lane: "chennai",
+      airport: { name: "Bengaluru airport", code: "BLR", ll: [77.71, 13.20] },
+      tm: ["28", "Games, toys and playthings"],
+      hs: ["9503.00", "toys"],
+      fit: [["Small and light", 1], ["Hard to break", 1], ["Not too cheap", 1], ["Few rules abroad", 0]],
+      pick: "Light, sturdy and well priced, but it is for children, so it must pass a US lab test.",
+      brand: "Engrave or stamp the brand into the wood, and print it on the box.",
+      rules: {
+        level: "Strict", gated: true,
+        pin: { name: "CPSC", sub: "Bethesda, Maryland · children's products", ll: [-77.10, 38.99] },
+        line: "An approved lab tests the toy against the US standard. Then you sign a Children's Product Certificate.",
+        items: ["A test by an approved lab against the US toy standard, ASTM F963", "A Children's Product Certificate (CPC) that you issue", "A permanent tracking label on the toy and its box"]
+      },
+      keywords: "Write for what US parents type, like “Montessori wooden toys”.",
+      claims: null, extraIndia: null,
+      shipNote: "Keep the lab report and CPC ready. Customs or Amazon can ask for them.",
+      price: { price: 29.99, unit: "one toy", cost: 650, ship: 1.4, duty: 20, ref: 15, fba: 5.2, ads: 3, conv: 2, fx: 88 }
+    }
+  };
+
+  // Break it: what goes wrong when a step is skipped. "at" names a pin; "stop" freezes the goods there.
+  G.BREAKS = [
+    { id: "tm", step: 3, title: "Skip the US trademark", at: "customer", label: "COPYCAT LISTING",
+      what: "Anyone can list copies under your brand name. Without a trademark you cannot join Brand Registry, so you cannot get them taken down.",
+      fix: "File with the USPTO before you print a single label. A pending application is enough for Amazon." },
+    { id: "lut", step: 4, title: "Skip the LUT promise letter", at: "portin", label: "IGST PAID UPFRONT",
+      what: "You pay IGST on every shipment before it leaves, then wait months for the refund. On a first order, that cash is gone just when you need it.",
+      fix: "File the LUT (form GST RFD-11) on the GST portal. It is free. Renew it every April." },
+    { id: "w8", step: 5, title: "Skip the W-8BEN tax interview", at: "customer", label: "UP TO 30% HELD BACK", money: "on",
+      what: "Amazon may hold back up to 30 percent of every payout for US tax.",
+      fix: "Finish the tax interview in Seller Central. It fills in the W-8BEN for you." },
+    { id: "sticker", step: 6, title: "Put the brand on a sticker", at: "maker", label: "BRAND REGISTRY: REJECTED",
+      what: "Amazon wants the brand permanently on the product. A paper sticker does not count, so no A+ Content, no Vine, and no copycat takedowns.",
+      fix: "Print, engrave, weave or mould the brand into the product or its box, then photograph it." },
+    { id: "rules", step: 7 },
+    { id: "ior", step: 9, title: "Leave nobody as Importer of Record", at: "portus", label: "STUCK AT THE PORT", stop: 2,
+      what: "Amazon never plays this role. The shipment sits at the port running up storage fees, then gets sent back or destroyed.",
+      fix: "Be the importer yourself, with a US tax number and a customs bond, or pay a broker. Ask your forwarder for a DDP quote." },
+    { id: "reviews", step: 10, title: "Buy a few fake reviews", at: "customer", label: "ACCOUNT CLOSED", money: "frozen",
+      what: "Amazon closes accounts for this, permanently, with the money inside frozen.",
+      fix: "Use Amazon Vine and the Request a Review button. Both are allowed." },
+    { id: "fira", step: 11, title: "Take payouts in someone else's name", at: "maker", label: "SHIPMENT STILL OPEN", money: "on",
+      what: "A bank receipt (FIRA) in a payment company's name does not close your shipment. It stays open with the central bank, and that can block future shipments.",
+      fix: "Make sure every FIRA shows your own business name." }
+  ];
+  G.RULE_BREAKS = {
+    cushion: { title: "Ship without the right label", at: "portus", label: "HELD AT CUSTOMS", stop: 2,
+      what: "Every US import must say “Made in India”, and textiles need a fibre label. Customs can seize or destroy a shipment that fails labelling rules.",
+      fix: "Sew in a label with the fibre, washing care and “Made in India” before the batch leaves the factory." },
+    pepper: { title: "Ship food without the FDA steps", at: "portus", label: "HELD FOR THE FDA", stop: 2,
+      what: "Food from an unregistered facility, or without Prior Notice, is held at the port and can be refused or destroyed. That is your whole batch and your freight money.",
+      fix: "Register the packing facility with the FDA, name a US Agent, and have your broker file Prior Notice for every shipment." },
+    toy: { title: "Skip the lab test and the CPC", at: "fba", label: "TOY CATEGORY LOCKED",
+      what: "Amazon will not open the toy category until it sees the test report and the Children's Product Certificate. Your stock has nowhere to go.",
+      fix: "Test with an approved lab against ASTM F963, issue the CPC, and add tracking labels." }
+  };
+})(window.G);
+/* ---------- The eleven steps and the dictionary (from the guide) ---------- */
+(function (G) {
+  G.PARTS = [
+    { n: 1, title: "Decide what you sell, and who makes it" },
+    { n: 2, title: "Get your papers in order" },
+    { n: 3, title: "Make it, then prove it" },
+    { n: 4, title: "Put it on the shelf" },
+    { n: 5, title: "Get paid, and close the loop" }
+  ];
+
+  G.STEPS = [
+    { n: 1, part: 1, side: "india", title: "Pick the product", where: "India · your desk",
+      line: "Choose something people abroad already buy, that India makes well, and that survives a long boat ride.",
+      plain: ["Look for a product that already sells in the target country, where the current sellers are beatable, and where India has a real cost or craft advantage.",
+        "Good first products are small, light, hard to break, and not too cheap. Shipping and Amazon's fees take a fixed slice of every sale, so a product under about fifteen dollars rarely leaves any profit."],
+      analogy: "opening a food stall at a fair in another city. You don't invent a new dish. You pick one people already queue for, and make it better or cheaper than the stall next door.",
+      jargon: [["Niche", "A narrow corner of a big market, like “copper water bottles” instead of “kitchenware”."], ["Private label", "A product a factory already makes, sold under your own brand."], ["BSR", "Best Sellers Rank, Amazon's popularity score. A lower number means more sales."], ["Unit economics", "The profit on one unit after every fee, tax, duty and shipping cost."]],
+      watch: "For a first attempt, avoid fragile, oversized or battery-powered products, and anything eaten or put on skin. Each adds rules or breakage you don't need while learning.",
+      tags: ["private-label"] },
+    { n: 2, part: 1, side: "india", title: "Find the maker in India", where: "India · factories and clusters",
+      line: "Find a workshop that can make it consistently, and get samples in your hands.",
+      plain: ["India makes most things in clusters: brass in Moradabad, textiles in Tiruppur and Panipat, leather in Kanpur, wooden toys in Channapatna, spices in Kerala and Guntur. IndiaMART, TradeIndia, export promotion councils and a visit to the town all work.",
+        "Get samples from three or more makers. Compare quality, price per unit, minimum order size, and how quickly they reply."],
+      analogy: "hiring a tailor for a wedding. You would never place the full order without a stitched sample, and you'd want to know they can deliver forty outfits, not one.",
+      jargon: [["MOQ", "Minimum Order Quantity, the smallest batch a factory will make. Often negotiable."], ["White label / OEM", "White label: their product, your brand. OEM: made to your own design."], ["Golden sample", "The one approved sample every unit must match. Keep one at home."], ["EPC", "Export Promotion Council. Industry bodies that list genuine exporters and makers."]],
+      watch: "Agree in writing who owns the mould, the design and the packaging artwork. Otherwise the factory can sell “your” product to the next buyer.",
+      tags: ["moq", "epc"] },
+    { n: 3, part: 2, side: "abroad", title: "Claim your brand name in the US", where: "United States · trademark office",
+      line: "An Indian trademark means nothing in an American court.",
+      plain: ["Trademarks are country by country, so you file with the US office, the USPTO. Foreign applicants file through a US-licensed attorney.",
+        "Full registration takes a year or more, but you don't have to wait. Amazon accepts a filed application, so file early, note the serial number, and move on."],
+      analogy: "booking your shop's name on the high street of a foreign city. Until you book it, anyone can put up a sign with your name.",
+      jargon: [["Class", "The category your goods fall into. Each class is a separate fee. There are 45 in all."], ["Pending", "Filed and waiting. Amazon accepts pending applications for Brand Registry in the US."], ["Serial number", "The number the USPTO gives your application on day one. You type it into Amazon."], ["IP Accelerator", "Amazon's list of vetted trademark lawyers. It can speed up Brand Registry."]],
+      watch: "Search the US trademark database before you print a single label. If someone owns a similar name in your class, pick another name now.",
+      tags: ["uspto", "brand-registry"] },
+    { n: 4, part: 2, side: "india", title: "Get India's permission to export", where: "India · government portals and your bank",
+      line: "An exporter ID, a tax registration with a promise letter, and a code from your bank.",
+      plain: ["First, the exporter's ID: the IEC, issued online by the DGFT and confirmed once a year. No shipment leaves India without it.",
+        "Second, GST registration plus a promise letter, the LUT. By default you pay IGST on exports and claim it back months later. The LUT says “I am exporting and I will bring the money home”, so you ship without paying it. Renew it every April.",
+        "Third, an AD code from your bank, registered on ICEGATE, so customs knows where the foreign money will land."],
+      analogy: "a passport (the IEC), a signed promise at the airport so you skip a deposit (the LUT), and telling the airline which account to refund (the AD code).",
+      jargon: [["IEC", "Importer Exporter Code, your exporter's ID, linked to your PAN. Re-confirm it every April to June."], ["LUT", "Letter of Undertaking, filed free each year as form GST RFD-11. Lets you export without paying IGST upfront."], ["AD Code", "A 14-digit code from the bank that holds your business account. Registered once per port."], ["Shipping bill", "The customs form for every export. It proves the goods left India."]],
+      watch: "Open a separate business current account before you ask for the AD code. Mixing personal and export money makes the Step 11 proofs messy.",
+      tags: ["iec", "dgft", "lut", "igst", "ad-code", "icegate"] },
+    { n: 5, part: 2, side: "sea", title: "Open the Amazon shop, meet the US tax office", where: "Online · Amazon and the IRS",
+      line: "A seller account for Amazon.com, a US tax ID, and a form that says you are not American.",
+      plain: ["Indian residents sign up through Amazon Global Selling with Indian documents: PAN, passport or Aadhaar, a business bank account and the IEC. Amazon checks you on a video call.",
+        "For the US you also need an EIN, a free tax number the IRS gives foreign businesses by fax or phone, and a W-8BEN form, filled inside Amazon's tax interview, so US tax isn't held back from your payouts."],
+      analogy: "renting a stall in an American mall. The mall wants your ID and bank details. The city gives you a trader number and lets you sign a note saying your taxes are paid back home.",
+      jargon: [["Seller Central", "The dashboard for listings, stock, ads and payouts."], ["Professional plan", "The paid seller plan, about $40 a month in the US."], ["EIN", "Employer Identification Number. Free from the IRS, by form SS-4 over fax or phone."], ["W-8BEN / W-8BEN-E", "“I live outside the US.” BEN for individuals, BEN-E for companies. Valid three years."]],
+      watch: "Apply for the EIN early. The fax route can take weeks, and a mistake restarts the clock. You don't need a US company to get one.",
+      tags: ["global-selling", "ein", "irs", "w8ben"] },
+    { n: 6, part: 3, side: "india", title: "Make the first batch, and prove the brand", where: "India · the factory, then online",
+      line: "File the name first. Print it on the product second. Photograph it third.",
+      plain: ["Place the first order. The brand must be part of the product: engraved, embroidered, moulded, printed on the box, woven into a label. Something that can't peel off.",
+        "Photograph the product and packaging plainly, brand visible, and upload them to Brand Registry with your trademark serial number. Approval takes a few days to a couple of weeks."],
+      analogy: "proving a jersey is your team's. Anyone can hold up a drawing of a logo. Only the real jersey, crest stitched in, settles it.",
+      jargon: [["Brand Registry", "Amazon's free programme for brand owners. Unlocks A+ Content, Vine and copycat takedowns."], ["Permanently affixed", "Printed, engraved, woven or moulded. A paper sticker doesn't count."], ["GTIN / UPC", "The barcode number. Buy genuine ones from GS1."], ["Pre-shipment inspection", "An independent check of the batch at the factory before it ships."]],
+      watch: "Spell the brand identically on the product, the trademark filing and the Amazon account. “Karigar Home” and “KarigarHome” can get you rejected.",
+      tags: ["brand-registry", "gtin"] },
+    { n: 7, part: 3, side: "abroad", title: "Pass the US product rules", where: "United States · regulators and test labs",
+      line: "Some products need US tests, labels or registrations before Amazon will list them.",
+      plain: ["India's rules don't travel with the goods. A plain cushion cover needs little beyond the right label. Anything you eat, put on your skin or give to a child has a proper checklist.",
+        "Every import must also be marked with its country of origin. “Made in India” on the product or its packaging is not optional."],
+      analogy: "a driving licence. Yours works at home. To drive in America for the long term, you take their test and carry their paperwork.",
+      jargon: [["Gated category", "An Amazon category locked until you upload approvals. Food, toys, supplements and topicals are common."], ["FDA", "The US authority for food, supplements, cosmetics and medicines."], ["CPSC / CPC", "The US children's product regulator, and the certificate you issue after a lab test."], ["Origin marking", "A permanent “Made in India”, required on every US import."]],
+      watch: "Ask a compliance consultant or your forwarder what your exact product needs before the factory prints packaging. Reprinting labels is a common, expensive mistake.",
+      tags: ["fda", "cpc", "coo"] },
+    { n: 8, part: 4, side: "sea", title: "Build the listing", where: "Online · Seller Central",
+      line: "Photos that sell, a picture-rich lower section, and the words US shoppers actually type.",
+      plain: ["Shoppers decide from the main photo: a pure white background, the product filling most of the frame. The other photos show scale, use and details. A short video helps.",
+        "Brand owners get A+ Content lower on the page, the place for the story of the artisan and the material. Then the words: find the real search phrases and put them in your title, bullets and hidden search terms."],
+      analogy: "a stall where customers can only see your photos and read your sign, and walk past two hundred rivals a minute. The photos have to do the touching.",
+      jargon: [["ASIN", "The unique code for every Amazon product page, created when you list."], ["A+ Content", "The picture-rich section below the bullets. Brand owners only. Free."], ["Backend keywords", "Hidden search terms only Amazon's search engine reads."], ["Brand Analytics", "Amazon's report of what people actually search for. Free for brand owners."]],
+      watch: "Don't copy a rival's photos or bullets. Write your own, in US spelling: color, not colour.",
+      tags: ["asin", "aplus"] },
+    { n: 9, part: 4, side: "sea", title: "Ship the boxes to Amazon's warehouse", where: "India → sea or air → United States",
+      line: "A cargo agent moves the goods. Someone in the US must sign for customs, and Amazon won't.",
+      plain: ["With FBA you send stock to Amazon once, and Amazon stores it, packs each order, delivers in two days and handles returns. You declare what is coming; Amazon picks the warehouse and gives you box labels.",
+        "A freight forwarder collects from the factory, books the ship or plane, handles the Indian port and delivers to Amazon. Amazon SEND is Amazon's own door-to-door option. Sea takes six to eight weeks to the US; air is roughly four times the price.",
+        "On arrival someone must be the Importer of Record, who signs the customs entry and pays the duty: you, with a US tax number and a customs bond, or a broker for a fee."],
+      analogy: "sending luggage ahead to a hotel abroad. The courier carries it, but the hotel won't stand at customs and pay your fees. You do, or you hire someone there to do it.",
+      jargon: [["FBA", "Fulfilment by Amazon. Storage per cubic foot, plus a fee per unit sold."], ["Freight forwarder", "Arranges the whole trip for your boxes. Ask for a DDP quote."], ["Importer of Record", "The legal name on the US customs entry. Never Amazon."], ["HTS code", "The 10-digit US product code that sets your duty rate."], ["Customs bond", "A guarantee to US customs that duty will be paid. A few hundred dollars a year."]],
+      watch: "The duty-free small-parcel route into the US ended in August 2025, and duty on Indian goods changed several times in 2025 and 2026. Check the current rate before you set a price.",
+      tags: ["fba", "freight-forwarder", "send", "ior", "hts", "customs-bond", "ddp"] },
+    { n: 10, part: 4, side: "sea", title: "Launch small, learn fast", where: "Online · Seller Central",
+      line: "A small first batch, a little advertising, and your first honest reviews.",
+      plain: ["A new listing has no reviews, so Amazon barely shows it. Pay for Sponsored Products ads on your keywords, and get early reviews through Amazon Vine, where free units go to trusted reviewers.",
+        "Keep the first batch to a few hundred units. Learn what breaks in transit, which photo people click and whether the price is right, then fix it before the big sea shipment."],
+      analogy: "a restaurant's soft opening. Feed a few dozen people well, fix the kitchen, then put up the big sign.",
+      jargon: [["PPC", "Pay-per-click ads in Amazon search. You set keywords and a daily budget."], ["ACOS", "Ad spend divided by the sales it made. $10 to sell $40 is 25%."], ["Amazon Vine", "Up to 30 free units to vetted reviewers. Brand owners only."], ["Buy Box", "The main “Add to Cart” spot. As the only seller of your brand, it's yours."]],
+      watch: "Never buy reviews or trade refunds for them. Amazon closes accounts permanently, with the money inside frozen. Watch returns too: above about 5% means a real problem.",
+      tags: ["ppc", "vine"] },
+    { n: 11, part: 5, side: "india", title: "Receive the money, keep the proof", where: "India · your bank and the trade portal",
+      line: "Amazon pays every two weeks. Your bank's receipt proves the dollars arrived. Keep every one.",
+      plain: ["Amazon collects from the customer, keeps its fees and pays you about every fourteen days. The dollars become rupees on the way, through Amazon's converter or a cheaper service, and land in your business account.",
+        "For each payment your bank issues a FIRA. On the DGFT portal you match it to the shipping bill and generate an e-BRC: proof the goods left and the money came home. That keeps the promise you signed in Step 4."],
+      analogy: "a library loan. The LUT borrowed the right to skip tax. The bank receipt returns the book. No receipt, and the library assumes you kept it.",
+      jargon: [["Disbursement", "Amazon's word for a payout: about every 14 days, minus fees and any reserve."], ["FIRA / FIRC", "The bank's receipt for each foreign payment. Ask for one on every payout."], ["e-BRC", "The DGFT record that a shipment was paid for. It closes your LUT promise."], ["EDPMS", "The central bank's tracker. A shipping bill stays open until matching money arrives."]],
+      watch: "If you use a payment service, confirm the FIRA is issued in your business name. A receipt in the service's name doesn't close your shipment.",
+      tags: ["firc", "ebrc", "edpms", "rodtep"] }
+  ];
+
+  // side: india, abroad (United States) or sea (Amazon, shipping, in between)
+  G.GLOSS = [
+    ["iec", "india", "IEC", "Importer Exporter Code · India", "Your exporter's ID, issued online by DGFT and linked to your PAN. Confirm it once a year. No shipment leaves India without it."],
+    ["dgft", "india", "DGFT", "Directorate General of Foreign Trade · India", "The department that issues exporter IDs and records proof that export money came home."],
+    ["gst", "india", "GST", "Goods and Services Tax · India", "India's sales tax. You register for it to export as a business."],
+    ["igst", "india", "IGST", "Integrated GST · India", "The GST charged when goods cross a border. Exporters skip it with an LUT, or pay it and claim it back later."],
+    ["lut", "india", "LUT", "Letter of Undertaking · India", "A free promise filed each financial year: “I am exporting and I will bring the money home.” Lets you ship without paying IGST upfront."],
+    ["ad-code", "india", "AD Code", "Authorised Dealer Code · India", "A 14-digit code from your bank branch, registered once per port on ICEGATE so customs knows where foreign money lands."],
+    ["icegate", "india", "ICEGATE", "Indian customs portal", "Where the AD code is registered and the shipping bill is filed."],
+    ["shipping-bill", "india", "Shipping bill", "Export customs declaration · India", "Generated for each shipment. Proves the goods left India and stays open until the payment arrives."],
+    ["firc", "india", "FIRA / FIRC", "Foreign Inward Remittance Advice / Certificate · India", "The bank's receipt for each foreign payment: amount, currency, sender. Ask for one on every payout."],
+    ["ebrc", "india", "e-BRC", "Electronic Bank Realisation Certificate · India", "Made on the DGFT portal by matching the bank receipt to the shipping bill. Closes your LUT promise."],
+    ["edpms", "india", "EDPMS", "Export Data Processing and Monitoring System · India", "The central bank's tracker of unpaid shipments. Money should arrive within nine months of shipping."],
+    ["rodtep", "india", "RoDTEP", "Remission of Duties and Taxes on Exported Products · India", "A small government cash-back on exports, paid as credits once shipments are closed."],
+    ["epc", "india", "EPC", "Export Promotion Council · India", "Industry bodies for handicrafts, spices, apparel and more. They list genuine makers and unlock some export benefits."],
+    ["cres", "india", "CRES", "Certificate of Registration as Exporter of Spices · India", "Issued by the Spices Board of India. Spice exporters need it before they ship."],
+    ["uspto", "abroad", "USPTO", "United States Patent and Trademark Office", "Where you file a US trademark, through a US-licensed attorney. A filed application is enough for Brand Registry."],
+    ["ein", "abroad", "EIN", "Employer Identification Number · US", "A free US tax ID for a business, by form SS-4 over fax or phone. Also used when you act as importer."],
+    ["irs", "abroad", "IRS", "Internal Revenue Service · US", "The US tax office. Issues the EIN and receives your foreign-status form through Amazon."],
+    ["w8ben", "abroad", "W-8BEN / W-8BEN-E", "Certificate of foreign status · US", "Says you live outside the US. Stops Amazon holding back up to 30% of payouts. Filled in Seller Central's tax interview."],
+    ["fda", "abroad", "FDA", "Food and Drug Administration · US", "Regulates food, supplements, cosmetics and medicines. Food facilities register, name a US Agent and file Prior Notice."],
+    ["us-agent", "abroad", "US Agent", "FDA contact · US", "A US-based contact the FDA can call about a foreign food facility. Required to register."],
+    ["prior-notice", "abroad", "Prior Notice", "FDA import notice · US", "A heads-up filed with the FDA before each food shipment arrives. Your forwarder or broker usually files it."],
+    ["cpc", "abroad", "CPSC / CPC", "Consumer Product Safety Commission / Children's Product Certificate · US", "The toy regulator, and the certificate you issue after an approved lab tests the toy against ASTM F963."],
+    ["ior", "abroad", "Importer of Record", "IOR · United States", "The legal name on the customs entry, responsible for duty and rules. Never Amazon. You, or a broker for a fee."],
+    ["customs-bond", "abroad", "Customs bond", "Import guarantee · US", "A guarantee to US customs that duty will be paid. A yearly bond costs a few hundred dollars."],
+    ["hts", "abroad", "HTS code", "Harmonized Tariff Schedule · US", "A 10-digit product code that sets your duty rate. The first six digits are the international HS code."],
+    ["coo", "abroad", "Origin marking", "Country of origin marking · US", "A permanent “Made in India” on the product or its packaging. Required on every import."],
+    ["global-selling", "sea", "Amazon Global Selling", "Amazon's export programme for Indian sellers", "Lets an Indian resident open seller accounts on Amazon's US, UK, European and other sites with Indian documents."],
+    ["brand-registry", "sea", "Brand Registry", "Amazon's programme for brand owners", "Free. Needs a filed trademark and real photos of the branded product. Unlocks A+ Content, Vine and takedowns."],
+    ["fba", "sea", "FBA", "Fulfilment by Amazon", "Amazon stores, packs, delivers and handles returns. You pay storage and a fee per unit sold."],
+    ["freight-forwarder", "sea", "Freight forwarder", "Cargo agent", "Arranges the whole journey of your boxes, from factory pickup to Amazon's door."],
+    ["send", "sea", "Amazon SEND", "Amazon's shipping service for Indian exporters", "Door-to-door from India to Amazon warehouses abroad, booked inside Seller Central."],
+    ["ddp", "sea", "DDP", "Delivered Duty Paid", "A shipping quote that includes duty and delivery to Amazon's door, so nothing surprises you on arrival."],
+    ["aplus", "sea", "A+ Content", "Enhanced product page section", "Banners, comparison charts and story images below the bullets. Brand owners only. Free."],
+    ["asin", "sea", "ASIN", "Amazon Standard Identification Number", "The unique code Amazon gives every product page."],
+    ["gtin", "sea", "GTIN / UPC", "Barcode number", "One per product. Buy genuine ones from GS1; reseller barcodes are often rejected."],
+    ["ppc", "sea", "PPC / Sponsored Products", "Pay-per-click ads", "Ads in Amazon search. You pay per click and set keywords and a daily budget."],
+    ["vine", "sea", "Amazon Vine", "Early-review programme", "Up to 30 free units to vetted reviewers for honest reviews. Brand owners only, small fee."],
+    ["moq", "sea", "MOQ", "Minimum Order Quantity", "The smallest batch a factory will make. Often negotiable for a slightly higher unit price."],
+    ["private-label", "sea", "Private label", "Selling model", "A factory's existing product sold under your brand. How most first-time sellers start."]
+  ].map(function (t) { return { id: t[0], side: t[1], k: t[2], full: t[3], v: t[4] }; });
+})(window.G);
+</script>
+<script type="module">
+/* ---------- Globe: an orthographic canvas map with a flying camera ---------- */
+if (!window.d3 || !window.topojson) document.getElementById('loading').textContent = 'The map library did not load. Check your connection and reload.';
+const RAD = Math.PI / 180;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+const Globe = (() => {
+  const cv = document.getElementById('map');
+  const g = cv.getContext('2d');
+  const base = document.createElement('canvas');
+  const bg = base.getContext('2d');
+  const proj = d3.geoOrthographic().clipAngle(90).precision(0.3);
+  const pathB = d3.geoPath(proj, bg), pathO = d3.geoPath(proj, g);
+  const GRAT = d3.geoGraticule().step([15, 15])();
+  const SPHERE = { type: 'Sphere' };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  let land = null, landHi = null, W = 1, H = 1, dpr = 1, baseKey = '', themeV = 0;
+  let tw = null, anims = [], running = false, dirty = true, lastDraw = 0, C = {};
+  let onPin = () => {};
+  const cam = { lon: 30, lat: 28, k: 1, cx: .35 };
+  const st = { legs: [], prog: 0, vehicle: false, pins: [], hi: new Set(), clusters: null, money: null, moneyP: 0, coins: false,
+    loop: null, broken: null, crow: null, drawn: [], boxes: [], interactive: true, follow: null, safeR: .69 };
+
+  const hex = h => { h = h.replace('#', ''); if (h.length === 3) h = h.split('').map(c => c + c).join(''); const n = parseInt(h, 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; };
+  const A = (c, a) => { if (!c || c[0] !== '#') return c; const [r, gg, b] = hex(c); return `rgba(${r},${gg},${b},${a})`; };
+  const line = pts => ({ type: 'LineString', coordinates: pts });
+  const visible = ll => d3.geoDistance(ll, [cam.lon, cam.lat]) < Math.PI / 2 - .02;
+  const R0 = () => H * .42;
+
+  function readColors() {
+    const cs = getComputedStyle(document.getElementById('app'));
+    const v = n => cs.getPropertyValue(n).trim();
+    C = { stage: v('--stage'), ocean: v('--ocean'), edge: v('--ocean-edge'), land: v('--land'), coast: v('--coast'), grat: v('--grat'),
+      ink: v('--ink'), muted: v('--muted'), faint: v('--faint'), card: v('--card'), india: v('--india'), sea: v('--sea'),
+      abroad: v('--abroad'), warn: v('--warn'), ok: v('--ok') };
+    themeV++; dirty = true; kick();
+  }
+  function resize() {
+    const r = cv.getBoundingClientRect(); if (!r.width) return;
+    W = r.width; H = r.height; dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = base.width = Math.round(W * dpr); cv.height = base.height = Math.round(H * dpr);
+    baseKey = ''; dirty = true; kick();
+  }
+
+  function densify(pts, step = .6) {
+    const out = [pts[0]];
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1], b = pts[i], n = Math.max(1, Math.ceil(d3.geoDistance(a, b) / RAD / step)), ip = d3.geoInterpolate(a, b);
+      for (let j = 1; j <= n; j++) out.push(ip(j / n));
+    }
+    return out;
+  }
+  function mkPath(pts) {
+    const d = densify(pts), cum = [0];
+    for (let i = 1; i < d.length; i++) cum.push(cum[i - 1] + d3.geoDistance(d[i - 1], d[i]));
+    return { pts: d, cum, len: cum[cum.length - 1] };
+  }
+  function partial(l, f) {
+    if (f >= 1) return l.pts;
+    const target = f * l.len; let j = clamp(d3.bisectLeft(l.cum, target), 1, l.pts.length - 1);
+    const t = clamp((target - l.cum[j - 1]) / ((l.cum[j] - l.cum[j - 1]) || 1), 0, 1);
+    return l.pts.slice(0, j).concat([d3.geoInterpolate(l.pts[j - 1], l.pts[j])(t)]);
+  }
+  function posAt(p) {
+    if (!st.legs.length) return null;
+    const i = clamp(Math.floor(p), 0, st.legs.length - 1), l = st.legs[i], pts = partial(l, clamp(p - i, 0, 1));
+    return { ll: pts[pts.length - 1], leg: l };
+  }
+
+  /* ---- drawing ---- */
+  function setProj() { proj.rotate([-cam.lon, -cam.lat]).scale(R0() * cam.k).translate([cam.cx * W, H * .47]); }
+  function drawBase(moving) {
+    const hi = landHi && cam.k > 1.6 && !(moving && cam.k < 3);
+    const L = hi ? landHi : (land || landHi);
+    const key = [cam.lon.toFixed(3), cam.lat.toFixed(3), cam.k.toFixed(4), cam.cx.toFixed(4), W, H, themeV, !!L, hi].join();
+    if (key === baseKey) return; baseKey = key;
+    const c = bg; c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, W, H);
+    const [x, y] = proj.translate(), R = proj.scale();
+    const halo = c.createRadialGradient(x, y, R * .98, x, y, R * 1.14);
+    halo.addColorStop(0, A(C.india, .14)); halo.addColorStop(1, A(C.india, 0));
+    c.fillStyle = halo; c.beginPath(); c.arc(x, y, R * 1.14, 0, 2 * Math.PI); c.fill();
+    const oc = c.createRadialGradient(x - R * .35, y - R * .4, R * .05, x, y, R * 1.02);
+    oc.addColorStop(0, C.ocean); oc.addColorStop(1, C.edge);
+    c.beginPath(); pathB(SPHERE); c.fillStyle = oc; c.fill();
+    c.beginPath(); pathB(GRAT); c.strokeStyle = C.grat; c.lineWidth = .8; c.stroke();
+    if (L) { c.beginPath(); pathB(L); c.fillStyle = C.land; c.fill(); c.strokeStyle = C.coast; c.lineWidth = .6; c.stroke(); }
+    c.beginPath(); pathB(SPHERE); c.strokeStyle = A(C.coast, .7); c.lineWidth = 1; c.stroke();
+    if (cam.k >= 1.8) { region(c, 'INDIA', [79.5, 23.2]); region(c, 'UNITED STATES', [-99, 39.5]); }
+  }
+  function region(c, txt, ll) {
+    if (!visible(ll)) return;
+    const [x, y] = proj(ll), fs = clamp(W * .0085 * Math.min(1.6, Math.sqrt(cam.k)), 9, 16);
+    c.font = `600 ${fs}px "Oswald", system-ui, sans-serif`; c.fillStyle = A(C.muted, .5);
+    c.textAlign = 'center'; c.textBaseline = 'middle';
+    if ('letterSpacing' in c) c.letterSpacing = '0.35em';
+    c.fillText(txt, x, y);
+    if ('letterSpacing' in c) c.letterSpacing = '0px';
+  }
+  function rr(c, x, y, w, h, r) { c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
+  function label(x, y, t1, t2, col, strong) {
+    const c = g, fs = clamp(W * .0082, 10.5, 14);
+    if (W < 520) t2 = null; // small screens: one-line labels
+    t1 = String(t1).toUpperCase();
+    const TITLE = `500 ${fs}px "Oswald", system-ui, sans-serif`, SUB = `600 ${fs * .86}px "Manrope", system-ui, sans-serif`;
+    const ls = on => { if ('letterSpacing' in c) c.letterSpacing = on ? '0.06em' : '0px'; };
+    c.font = TITLE; ls(true); const w1 = c.measureText(t1).width; ls(false);
+    c.font = SUB; const w2 = t2 ? c.measureText(t2).width : 0;
+    const w = Math.max(w1, w2) + 14, h = t2 ? fs * 2.6 : fs * 1.75;
+    const top = W * .052, bottom = H - W * .085, right = W * st.safeR;
+    for (const [tx, ty] of [[x + 12, y - h / 2], [x - 12 - w, y - h / 2], [x - w / 2, y - h - 12], [x - w / 2, y + 12]]) {
+      if (tx < 6 || ty < top || tx + w > right || ty + h > bottom) continue;
+      if (st.boxes.some(o => tx < o.x + o.w && tx + w > o.x && ty < o.y + o.h && ty + h > o.y)) continue;
+      st.boxes.push({ x: tx, y: ty, w, h });
+      c.beginPath(); rr(c, tx, ty, w, h, h / 2 > 12 ? 10 : h / 2); c.fillStyle = A(C.card, .9); c.fill();
+      c.lineWidth = strong ? 1.6 : 1; c.strokeStyle = A(col, strong ? .9 : .45); c.stroke();
+      c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+      c.font = TITLE; ls(true); c.fillStyle = strong ? col : C.ink; c.fillText(t1, tx + 7, ty + fs * 1.2); ls(false);
+      if (t2) { c.font = SUB; c.fillStyle = C.muted; c.fillText(t2, tx + 7, ty + fs * 2.25); }
+      return true;
+    }
+    return false;
+  }
+  function drawRoute() {
+    const c = g; c.lineCap = 'round'; c.lineJoin = 'round';
+    c.setLineDash([3, 5]); c.lineWidth = 1.2;
+    for (const l of st.legs) { c.beginPath(); pathO(line(l.pts)); c.strokeStyle = A(C[l.side], .45); c.stroke(); }
+    c.setLineDash([]);
+    st.legs.forEach((l, i) => {
+      if (st.prog <= i) return;
+      const pts = partial(l, Math.min(1, st.prog - i));
+      c.beginPath(); pathO(line(pts)); c.strokeStyle = A(C.stage, .85); c.lineWidth = 6; c.stroke();
+      c.beginPath(); pathO(line(pts)); c.strokeStyle = C[l.side]; c.lineWidth = l.kind === 'truck' ? 2.4 : 3.2;
+      if (l.kind === 'plane') c.setLineDash([8, 5]);
+      c.stroke(); c.setLineDash([]);
+    });
+  }
+  function drawVehicle() {
+    if (!st.vehicle) return;
+    const pos = posAt(st.prog); if (!pos || !visible(pos.ll)) return;
+    const [x, y] = proj(pos.ll), c = g;
+    c.beginPath(); c.arc(x, y, 11, 0, 2 * Math.PI); c.fillStyle = C[pos.leg.side]; c.fill(); c.lineWidth = 2.5; c.strokeStyle = C.card; c.stroke();
+    c.fillStyle = C.card; c.beginPath();
+    if (pos.leg.kind === 'ship') { c.moveTo(x - 6.5, y); c.lineTo(x + 6.5, y); c.lineTo(x + 4, y + 4.5); c.lineTo(x - 4, y + 4.5); c.closePath(); c.rect(x - 3.5, y - 4.5, 5, 3.5); }
+    else if (pos.leg.kind === 'plane') { c.moveTo(x + 7, y); c.lineTo(x - 5, y - 5.5); c.lineTo(x - 2.5, y); c.lineTo(x - 5, y + 5.5); c.closePath(); }
+    else { c.rect(x - 6.5, y - 4, 8.5, 6.5); c.rect(x + 2.5, y - 1.5, 4, 4); }
+    c.fill();
+  }
+  function drawCrow() {
+    const { a, b, text } = st.crow, c = g;
+    c.setLineDash([2, 6]); c.lineWidth = 1.6; c.strokeStyle = A(C.ink, .55);
+    c.beginPath(); pathO(line(densify([a, b], 1))); c.stroke(); c.setLineDash([]);
+    const mid = d3.geoInterpolate(a, b)(.5);
+    if (visible(mid)) { const [x, y] = proj(mid); label(x, y, text, 'as the crow flies', C.ink, true); }
+  }
+  function drawMoney(now) {
+    const m = st.money; if (!m || st.moneyP <= 0) return false;
+    const c = g, col = m.frozen ? C.faint : C.india;
+    c.setLineDash([6, 5]); c.lineWidth = 2.4; c.strokeStyle = col;
+    c.beginPath(); pathO(line(partial(m, st.moneyP))); c.stroke(); c.setLineDash([]);
+    if (!st.coins || m.frozen || reduce.matches) return false;
+    for (let i = 0; i < 4; i++) {
+      const f = (now / 5200 + i / 4) % 1; if (f > st.moneyP) continue;
+      const pp = partial(m, f), ll = pp[pp.length - 1]; if (!visible(ll)) continue;
+      const [x, y] = proj(ll);
+      c.beginPath(); c.arc(x, y, 7, 0, 2 * Math.PI); c.fillStyle = C.india; c.fill(); c.lineWidth = 1.5; c.strokeStyle = C.card; c.stroke();
+      c.fillStyle = C.card; c.font = '800 9px "Manrope", system-ui, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.fillText(f < .5 ? '$' : '₹', x, y + .5);
+    }
+    return true;
+  }
+  function ring(x, y, now, col, period, r0, spread, alpha) {
+    const t = (now % period) / period; g.beginPath(); g.arc(x, y, r0 + t * spread, 0, 2 * Math.PI);
+    g.strokeStyle = A(col, (1 - t) * alpha); g.lineWidth = 2; g.stroke();
+  }
+  function drawBroken(now) {
+    const b = st.broken; if (!visible(b.ll)) return;
+    const [x, y] = proj(b.ll), c = g;
+    if (!reduce.matches) { ring(x, y, now, C.warn, 1400, 9, 30, .75); ring(x, y, now + 700, C.warn, 1400, 9, 30, .75); }
+    c.beginPath(); c.arc(x, y, 9, 0, 2 * Math.PI); c.fillStyle = C.warn; c.fill(); c.lineWidth = 2; c.strokeStyle = C.card; c.stroke();
+    c.beginPath(); c.moveTo(x - 3.3, y - 3.3); c.lineTo(x + 3.3, y + 3.3); c.moveTo(x + 3.3, y - 3.3); c.lineTo(x - 3.3, y + 3.3); c.lineWidth = 2.2; c.stroke();
+    label(x, y, b.label, b.sub, C.warn, true);
+  }
+  function drawLoop(now) {
+    const ll = st.loop; if (!visible(ll)) return;
+    const [x, y] = proj(ll), c = g;
+    if (!reduce.matches) ring(x, y, now, C.ok, 2400, 15, 24, .55);
+    c.beginPath(); c.arc(x, y, 15, 0, 2 * Math.PI); c.fillStyle = A(C.card, .9); c.fill(); c.strokeStyle = C.ok; c.lineWidth = 2.5; c.stroke();
+    c.beginPath(); c.moveTo(x - 6, y); c.lineTo(x - 1.5, y + 4.5); c.lineTo(x + 6, y - 4.5); c.strokeStyle = C.ok; c.lineWidth = 2.8; c.stroke();
+  }
+  function drawClusters() {
+    for (const k of st.clusters.list) {
+      if (!visible(k.ll) || k.id === st.clusters.sel) continue; // the maker pin already marks your own cluster
+      const [x, y] = proj(k.ll), sel = false;
+      g.save(); g.translate(x, y); g.rotate(Math.PI / 4); g.fillStyle = sel ? C.india : A(C.india, .6); g.fillRect(-4.5, -4.5, 9, 9);
+      g.strokeStyle = C.card; g.lineWidth = 1.5; g.strokeRect(-4.5, -4.5, 9, 9); g.restore();
+      st.drawn.push({ p: { step: 2 }, x, y });
+      label(x, y, k.name, k.what, C.india, sel);
+    }
+  }
+  function drawPins(now) {
+    const order = st.pins.slice().sort((a, b) => (st.hi.has(b.id) - st.hi.has(a.id)) || ((b.major | 0) - (a.major | 0)));
+    let pulse = false;
+    for (const p of order) {
+      if (!visible(p.ll)) continue;
+      const [x, y] = proj(p.ll), hi = st.hi.has(p.id), col = C[p.side] || C.ink, c = g;
+      c.globalAlpha = st.hi.size && !hi ? .55 : 1;
+      if (hi && !reduce.matches) { ring(x, y, now, col, 1800, 6, 18, .55); pulse = true; }
+      c.beginPath(); if (p.office) c.rect(x - 5, y - 5, 10, 10); else c.arc(x, y, hi ? 6 : 5, 0, 2 * Math.PI);
+      c.fillStyle = col; c.fill(); c.lineWidth = 2; c.strokeStyle = C.card; c.stroke();
+      c.globalAlpha = 1;
+      st.drawn.push({ p, x, y });
+      if (hi || (!st.hi.size && p.major)) label(x, y, p.label, p.sub, col, hi);
+    }
+    return pulse;
+  }
+  function draw(now, moving) {
+    setProj(); drawBase(moving);
+    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, cv.width, cv.height); g.drawImage(base, 0, 0);
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    st.drawn = []; st.boxes = [];
+    if (st.legs.length) drawRoute();
+    let pulse = drawMoney(now);
+    if (st.broken) { drawBroken(now); pulse = true; }
+    if (st.crow) drawCrow();
+    if (st.loop) { drawLoop(now); pulse = true; }
+    pulse = drawPins(now) || pulse;
+    if (st.clusters) drawClusters();
+    drawVehicle();
+    return pulse;
+  }
+
+  /* ---- animation loop ---- */
+  function kick() { if (!running) { running = true; requestAnimationFrame(frame); } }
+  function frame(now) {
+    let active = false;
+    if (tw) {
+      const t = clamp((now - tw.t0) / tw.dur, 0, 1), e = ease(t), [lo, la] = tw.gi(e);
+      cam.lon = lo; cam.lat = la; cam.cx = tw.from.cx + (tw.to.cx - tw.from.cx) * e;
+      cam.k = Math.exp(tw.lk0 + (tw.lk1 - tw.lk0) * e) * (1 - tw.bump * Math.sin(Math.PI * e));
+      if (t >= 1) { const r = tw.res; tw = null; r(); }
+      active = true;
+    }
+    for (const a of anims.slice()) {
+      const t = clamp((now - a.t0) / a.dur, 0, 1); a.fn(a.ease ? ease(t) : t);
+      if (t >= 1) { anims.splice(anims.indexOf(a), 1); a.res(); }
+      active = true;
+    }
+    if (st.follow && !tw) {
+      const pos = posAt(st.prog);
+      if (pos) {
+        const [lo, la] = pos.ll, dl = ((lo - cam.lon + 540) % 360) - 180;
+        cam.lon += dl * .09; cam.lat += (la - cam.lat) * .09; cam.k += (st.follow.k - cam.k) * .06; cam.cx += (.5 - cam.cx) * .1;
+        active = true;
+      }
+    }
+    let pulse = true;
+    if (dirty || active || now - lastDraw > 33) { pulse = draw(now, active); lastDraw = now; dirty = false; }
+    if (active || pulse) requestAnimationFrame(frame); else running = false;
+  }
+  function stopTween() { if (tw) { const r = tw.res; tw = null; r(); } }
+  function flyTo(t, dur = 1800) {
+    const to = { lon: t.lon ?? cam.lon, lat: t.lat ?? cam.lat, k: t.k ?? cam.k, cx: t.cx ?? cam.cx };
+    st.follow = null; stopTween();
+    if (reduce.matches || dur <= 0) { Object.assign(cam, to); dirty = true; kick(); return Promise.resolve(); }
+    const from = { ...cam }, dist = d3.geoDistance([from.lon, from.lat], [to.lon, to.lat]);
+    return new Promise(res => {
+      tw = { from, to, t0: performance.now(), dur, res, gi: d3.geoInterpolate([from.lon, from.lat], [to.lon, to.lat]),
+        lk0: Math.log(from.k), lk1: Math.log(to.k), bump: Math.min(.55, dist / Math.PI * 1.2) };
+      kick();
+    });
+  }
+  function animate(fn, dur, eased = true) {
+    if (reduce.matches || dur <= 0) { fn(1); dirty = true; kick(); return Promise.resolve(); }
+    return new Promise(res => { anims.push({ fn, dur, t0: performance.now(), ease: eased, res }); kick(); });
+  }
+  function cancel() { for (const a of anims) a.res(); anims = []; stopTween(); st.follow = null; }
+  function fit(points, margin = .86) {
+    let x = 0, y = 0, z = 0;
+    for (const [lo, la] of points) { const l = lo * RAD, p = la * RAD; x += Math.cos(p) * Math.cos(l); y += Math.cos(p) * Math.sin(l); z += Math.sin(p); }
+    const n = Math.hypot(x, y, z) || 1, lon = Math.atan2(y, x) / RAD, lat = Math.asin(clamp(z / n, -1, 1)) / RAD;
+    let dm = 0; for (const p of points) dm = Math.max(dm, d3.geoDistance(p, [lon, lat]));
+    return { lon, lat, k: clamp(margin / Math.sin(Math.min(dm, 1.5)), .9, 7) };
+  }
+
+  /* ---- input ---- */
+  function hit(e) {
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = null, bd = 16;
+    for (const o of st.drawn) { const d = Math.hypot(o.x - x, o.y - y); if (d < bd) { bd = d; best = o; } }
+    return best;
+  }
+  function bindInput() {
+    let d = null;
+    cv.addEventListener('pointerdown', e => { if (st.interactive) d = { x: e.clientX, y: e.clientY, lon: cam.lon, lat: cam.lat, moved: false, id: e.pointerId }; });
+    cv.addEventListener('pointermove', e => {
+      if (d) {
+        const dx = e.clientX - d.x, dy = e.clientY - d.y;
+        if (!d.moved && Math.hypot(dx, dy) > 4) { d.moved = true; try { cv.setPointerCapture(d.id); } catch (_) {} cancel(); }
+        if (d.moved) { const R = R0() * cam.k; cam.lon = d.lon - dx / R / RAD; cam.lat = clamp(d.lat + dy / R / RAD, -70, 80); dirty = true; kick(); }
+        return;
+      }
+      cv.style.cursor = st.interactive && hit(e) ? 'pointer' : '';
+    });
+    cv.addEventListener('pointerup', e => { if (d && !d.moved) { const h = hit(e); if (h) onPin(h.p); } d = null; });
+    cv.addEventListener('pointercancel', () => { d = null; });
+    cv.addEventListener('wheel', e => {
+      if (!st.interactive) return;
+      e.preventDefault(); cancel();
+      cam.k = clamp(cam.k * Math.exp(-e.deltaY * .0015), .8, 16); dirty = true; kick();
+    }, { passive: false });
+  }
+
+  return {
+    cam, st, flyTo, animate, cancel, fit, mkPath, posAt,
+    init() {
+      readColors(); resize(); new ResizeObserver(resize).observe(cv);
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', readColors);
+      new MutationObserver(readColors).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      bindInput();
+    },
+    setLand(a, b) { if (a) land = a; if (b) landHi = b; baseKey = ''; dirty = true; kick(); },
+    setRoute(legs) { st.legs = legs.map(l => ({ ...l, ...mkPath(l.pts) })); dirty = true; kick(); },
+    legKm(i) { return (st.legs[i] ? st.legs[i].len : 0) * 6371; },
+    refresh() { baseKey = ''; dirty = true; kick(); },
+    redraw() { dirty = true; kick(); },
+    onPin(fn) { onPin = fn; }
+  };
+})();
+
+/* ---------- App state and shared helpers ---------- */
+const { PRODUCTS, PLACES, LANES, CLUSTERS, STEPS, PARTS, GLOSS, BREAKS, RULE_BREAKS, CUSTOMER, SESSION, GAME_ID } = window.G;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const appEl = $('#app'), panel = $('#panel');
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+};
+const SIDE_NAME = { india: 'India', sea: 'In between', abroad: 'United States' };
+const S = { prod: 'cushion', mode: 'sea', tab: 'journey', step: null, brk: null, price: null, day: 120, touring: false, term: null, booted: false };
+let viewTok = 0;
+const P = () => PRODUCTS[S.prod];
+const isPhone = () => matchMedia('(max-width: 760px)').matches;
+const cxFor = () => (S.touring || isPhone()) ? .5 : .35;
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const svg = (inner, sw = 1.8) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inner}</svg>`;
+const km = v => (v >= 1000 ? (Math.round(v / 100) * 100).toLocaleString('en-US') : Math.round(v / 10) * 10) + ' km';
+const usd = v => (v < 0 ? '−$' : '$') + Math.abs(v).toFixed(2);
+const inr = v => (v < 0 ? '−₹' : '₹') + Math.round(Math.abs(v)).toLocaleString('en-IN');
+const clockIn = tz => new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: tz }).format(new Date());
+
+/* ---------- links back to Edock ---------- */
+function tagged(url, campaign, placement) {
+  try {
+    const u = new URL(url);
+    u.searchParams.set('utm_source', GAME_ID); u.searchParams.set('utm_medium', 'game');
+    u.searchParams.set('utm_campaign', campaign); u.searchParams.set('utm_content', placement); u.searchParams.set('utm_term', S.prod);
+    return u.toString();
+  } catch (e) { return url; }
+}
+function promo(placement) {
+  const live = Date.now() < Date.parse(SESSION.endsAt);
+  const href = live ? tagged(SESSION.url, SESSION.campaign, placement) : tagged(SESSION.allUrl, SESSION.allCampaign, placement);
+  return `<div class="promo">
+    <div class="eye">${live ? 'Live session' : 'Keep going'}</div>
+    <p>${live ? 'Ask people who export for real everything this page could not answer.' : 'Edock runs live sessions where people who export for real answer your questions.'}</p>
+    ${live ? `<div class="ev"><div class="cal"><b>${SESSION.month}</b><span>${SESSION.day}</span></div>
+      <div><div class="ev-t">${esc(SESSION.title)}</div><div class="psub">${esc(SESSION.when)}</div><div class="psub">${esc(SESSION.host)}</div></div></div>` : ''}
+    <a class="cta" href="${esc(href)}" target="_blank" rel="noopener">${live ? 'Save my seat' : 'See upcoming sessions'} →</a>
+    <div class="psub">Opens edock.io in a new tab.</div>
+  </div>`;
+}
+
+/* ---------- route, pins and camera shots for the chosen product ---------- */
+function legsFor(p = P(), mode = S.mode) {
+  const sea = mode === 'sea';
+  const india = [...(p.farm ? [p.farm.ll] : []), p.maker.ll, ...(sea ? p.inland : []), sea ? p.port.ll : p.airport.ll];
+  const cross = sea ? LANES[p.lane] : [p.airport.ll, PLACES.jfk];
+  const us = [sea ? PLACES.nynj : PLACES.jfk, PLACES.fba, PLACES.customer];
+  return [{ side: 'india', kind: 'truck', pts: india }, { side: 'sea', kind: sea ? 'ship' : 'plane', pts: cross }, { side: 'abroad', kind: 'truck', pts: us }];
+}
+function pinsFor(p = P(), mode = S.mode) {
+  const sea = mode === 'sea';
+  return [
+    { id: 'maker', ll: p.maker.ll, label: p.maker.name, sub: `${p.maker.region} · the maker`, side: 'india', major: true, step: 2 },
+    p.farm && { id: 'farm', ll: p.farm.ll, label: p.farm.name, sub: 'pepper farms', side: 'india', step: 2 },
+    { id: 'dgft', ll: PLACES.delhi, label: 'New Delhi', sub: 'DGFT · exporter ID', side: 'india', office: true, step: 4 },
+    sea ? { id: 'portin', ll: p.port.ll, label: p.port.name, sub: `${p.port.sub} · export port`, side: 'sea', major: true, step: 9 }
+        : { id: 'portin', ll: p.airport.ll, label: p.airport.name, sub: `${p.airport.code} · air cargo`, side: 'sea', major: true, step: 9 },
+    sea ? { id: 'portus', ll: PLACES.nynj, label: 'Port of NY & NJ', sub: 'US customs', side: 'abroad', major: true, step: 9 }
+        : { id: 'portus', ll: PLACES.jfk, label: 'JFK airport', sub: 'New York · US customs', side: 'abroad', major: true, step: 9 },
+    { id: 'uspto', ll: PLACES.uspto, label: 'USPTO', sub: 'Alexandria, Virginia · trademarks', side: 'abroad', office: true, step: 3 },
+    { id: 'irs', ll: PLACES.irs, label: 'IRS', sub: 'Washington, DC · US tax ID', side: 'sea', office: true, step: 5 },
+    p.rules.pin && { id: 'rules', ll: p.rules.pin.ll, label: p.rules.pin.name, sub: p.rules.pin.sub, side: 'abroad', office: true, step: 7 },
+    { id: 'fba', ll: PLACES.fba, label: 'Amazon warehouse', sub: 'FBA · New Jersey', side: 'sea', step: 10 },
+    { id: 'customer', ll: PLACES.customer, label: CUSTOMER.name, sub: 'the customer', side: 'abroad', major: true, step: 8 }
+  ].filter(Boolean);
+}
+const pinLL = id => (Globe.st.pins.find(p => p.id === id) || {}).ll;
+function shot(name) {
+  const p = P();
+  const views = {
+    overview: () => Globe.fit(legsFor().flatMap(l => l.pts).concat([PLACES.customer])),
+    origin: () => ({ lon: p.maker.ll[0], lat: p.maker.ll[1] - .4, k: 5 }),
+    india: () => ({ lon: 79.5, lat: 20.5, k: 3 }),
+    portin: () => { const ll = pinLL('portin'); return { lon: ll[0] - 2, lat: ll[1], k: 4.2 }; },
+    dc: () => ({ lon: -76.9, lat: 39.1, k: 9 }),
+    nyc: () => ({ lon: -74.4, lat: 40.5, k: 9 }),
+    us: () => ({ lon: -79.2, lat: 40, k: 4.4 })
+  };
+  return { ...(views[name] || views.overview)(), cx: cxFor() };
+}
+function go(name, dur = 1800) { const d = S.booted ? dur : 0; S.booted = true; return Globe.flyTo(shot(name), d); }
+function moneyPath(frozen = false) { const m = Globe.mkPath([PLACES.customer, P().maker.ll]); m.frozen = frozen; return m; }
+function mapState(o = {}) {
+  const st = Globe.st;
+  st.hi = new Set(o.hi || []);
+  st.clusters = o.clusters ? { list: CLUSTERS, sel: P().cluster } : null;
+  st.prog = o.prog ?? 3; st.vehicle = !!o.vehicle; st.crow = o.crow || null;
+  st.money = o.money ? moneyPath(o.money === 'frozen') : null; st.moneyP = o.money ? (o.moneyP ?? 1) : 0; st.coins = !!o.coins;
+  st.loop = o.loop ? P().maker.ll : null; st.broken = o.broken || null;
+  st.safeR = (S.touring || isPhone()) ? 1 : .69;
+  Globe.redraw();
+}
+function caption(e, l, s, anim = true) {
+  $('#capE').textContent = e || ''; $('#capL').textContent = l || ''; $('#capS').textContent = s || '';
+  const cap = $('#cap');
+  if (anim) { cap.classList.remove('swap'); void cap.offsetWidth; cap.classList.add('swap'); }
+}
+
+/* ---------- price model (per unit, in dollars) ---------- */
+function loadPrice() {
+  let saved = null; try { saved = JSON.parse(store.get('gomh:price:' + S.prod) || 'null'); } catch (e) {}
+  return { ...P().price, ...(saved || {}) };
+}
+function calc(v = S.price, mode = S.mode) {
+  const ship = v.ship * (mode === 'air' ? 4 : 1);
+  const refFee = v.price * v.ref / 100, payout = v.price - refFee - v.fba - v.ads;
+  const convFee = Math.max(0, payout) * v.conv / 100, factory = v.cost / v.fx, duty = factory * v.duty / 100;
+  const profit = payout - convFee - factory - ship - duty;
+  const be = ((factory + ship + duty) / (1 - v.conv / 100) + v.fba + v.ads) / (1 - v.ref / 100);
+  return { ship, refFee, payout, convFee, factory, duty, profit, be, margin: profit / v.price, inrPerUnit: (payout - convFee) * v.fx };
+}
+
+/* ---------- shell: product picker, mode, tabs ---------- */
+function buildShell() {
+  $('#prodSeg').innerHTML = '<span class="drop" aria-hidden="true"></span>' + Object.values(PRODUCTS).map(p =>
+    `<button type="button" data-p="${p.id}" aria-pressed="false" title="${esc(p.kind)}">${svg(p.icon)}${esc(p.short)}</button>`).join('');
+  $$('#prodSeg button').forEach(b => b.onclick = () => { if (S.prod !== b.dataset.p) { S.prod = b.dataset.p; applyProduct(); } });
+  $$('#modeSeg button').forEach(b => b.onclick = () => { if (S.mode !== b.dataset.mode) { S.mode = b.dataset.mode; store.set('gomh:mode', S.mode); applyProduct(true); } });
+  $$('#tabs .tab').forEach(b => b.onclick = () => setTab(b.dataset.tab));
+  $('#play').onclick = () => startTour();
+  Globe.onPin(p => { if (!S.touring && p.step) openStep(p.step); });
+  addEventListener('resize', () => { placeDrops(); if (!S.touring) { Globe.cam.cx = cxFor(); Globe.st.safeR = isPhone() ? 1 : .69; Globe.redraw(); } });
+  $('#themeBtn').onclick = () => { const next = theme() === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', next); store.set('edockTheme', next); paintTheme(); };
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', paintTheme);
+  new MutationObserver(paintTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  // Liquid glass: the specular highlight follows the pointer
+  document.addEventListener('pointermove', e => {
+    const el = e.target.closest && e.target.closest('.lg, .play'); if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+}
+const theme = () => { const t = document.documentElement.getAttribute('data-theme'); return t === 'dark' || t === 'light' ? t : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); };
+const SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>';
+const MOON = '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>';
+function paintTheme() {
+  const next = theme() === 'dark' ? 'light' : 'dark', b = $('#themeBtn');
+  b.innerHTML = svg(next === 'dark' ? MOON : SUN) + (next === 'dark' ? 'Dark' : 'Light');
+  b.setAttribute('aria-label', `Switch to the ${next} theme`);
+}
+// Slide each glass control's droplet under its selected option
+function placeDrops() {
+  $$('.seg, .tabs').forEach(box => {
+    const drop = $('.drop', box), on = $('[aria-pressed="true"], [aria-selected="true"]', box);
+    if (!drop) return;
+    if (!on || !on.offsetWidth) { drop.style.opacity = '0'; return; }
+    drop.style.width = on.offsetWidth + 'px'; drop.style.height = on.offsetHeight + 'px';
+    drop.style.transform = `translate(${on.offsetLeft}px, ${on.offsetTop}px)`; drop.style.opacity = '1';
+  });
+}
+function applyProduct(keepStep) {
+  store.set('gomh:prod', S.prod);
+  S.price = loadPrice(); S.brk = null; if (!keepStep) S.step = null;
+  $$('#prodSeg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.p === S.prod)));
+  $$('#modeSeg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === S.mode)));
+  placeDrops();
+  Globe.setRoute(legsFor()); Globe.st.pins = pinsFor();
+  if (S.touring) restartTour(); else render();
+}
+function setTab(t) {
+  if (S.touring) stopTour(false);
+  S.tab = t; if (t === 'journey') S.step = null;
+  $$('#tabs .tab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === t)));
+  render();
+}
+function render() {
+  viewTok++; Globe.cancel(); Globe.st.interactive = true;
+  $$('#tabs .tab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === S.tab)));
+  placeDrops();
+  ({ journey: renderJourney, break: renderBreak, price: renderPrice, money: renderMoney, dict: renderDict })[S.tab]();
+  panel.scrollTop = 0;
+}
+
+/* ---------- Journey tab ---------- */
+const doneKey = n => `gomh:done:${S.prod}:${n}`;
+const isDone = n => store.get(doneKey(n)) === '1';
+function renderJourney() {
+  if (S.step) return renderStep(S.step);
+  const p = P(), done = STEPS.filter(s => isDone(s.n)).length;
+  panel.innerHTML = `
+    <div class="eye">Your product</div>
+    <div class="pcard">
+      <div class="prow"><span class="pico">${svg(p.icon)}</span>
+        <div><div class="pname">${esc(p.name)}</div><div class="psub">${esc(p.maker.name)}, ${esc(p.maker.region)} → ${esc(CUSTOMER.name)}</div></div></div>
+      <div class="chips">
+        <span class="chip">Trademark class ${p.tm[0]}</span><span class="chip">HS ${p.hs[0]}</span>
+        <span class="chip ${p.rules.level === 'Light' ? 'ok' : 'warn'}">US rules: ${p.rules.level.toLowerCase()}</span>
+        <span class="chip">${S.mode === 'sea' ? 'By sea' : 'By air'}</span></div>
+      <div><div class="bar"><i style="width:${done / 11 * 100}%"></i></div><div class="psub" style="margin-top:4px">${done} of 11 steps done</div></div>
+    </div>
+    ${PARTS.map(pt => `<div class="part"><div class="part-h"><span class="part-n">Part ${pt.n}</span><span class="part-t">${esc(pt.title)}</span></div>
+      ${STEPS.filter(s => s.part === pt.n).map(s => `<button type="button" class="srow${isDone(s.n) ? ' done' : ''}" data-side="${s.side}" data-step="${s.n}">
+        <span class="n">${s.n}</span><span><span class="tt">${esc(s.title)}</span><span class="ww">${esc(s.where)}</span></span><span class="ck">✓</span></button>`).join('')}
+    </div>`).join('')}
+    ${promo('journey-end')}`;
+  $$('.srow', panel).forEach(b => b.onclick = () => openStep(+b.dataset.step));
+  mapState({ prog: 3 });
+  go('overview');
+  caption('The whole journey', `${p.short}: ${p.maker.name} to ${CUSTOMER.short}`, 'Drag the globe, tap a pin or a step, or press Play for the two-minute story.');
+}
+function openStep(n) {
+  if (S.touring) stopTour(false);
+  S.tab = 'journey'; S.step = n; render();
+}
+function stepLine(n) {
+  const p = P();
+  return ({ 1: p.pick, 3: 'An Indian trademark means nothing in an American court.', 7: p.rules.line, 8: p.keywords })[n] || STEPS[n - 1].line;
+}
+function productNote(n) {
+  const p = P(), sea = S.mode === 'sea', lc = p.short.toLowerCase();
+  switch (n) {
+    case 1: return `<b>Your ${esc(lc)}:</b> ${esc(p.pick)}<div class="fit">${p.fit.map(([k, ok]) => `<div><span class="mk ${ok ? 'y' : 'n'}">${ok ? '✓' : '✕'}</span>${esc(k)}</div>`).join('')}</div>`;
+    case 2: return `<b>Your cluster:</b> ${esc(p.maker.note)}${p.rules.pin && p.id === 'pepper' ? ' The packing facility is the one the FDA registers in Step 7, so choose a cooperative one.' : ''}`;
+    case 3: return `<b>Your class:</b> ${p.tm[0]}, ${esc(p.tm[1])}. Each extra class is a separate fee.`;
+    case 4: return p.extraIndia ? `<b>Extra for spices:</b> ${esc(p.extraIndia)}` : '<b>Same for every product:</b> the IEC, GST with an LUT, and the AD code.';
+    case 6: return `<b>Branding a ${esc(lc)}:</b> ${esc(p.brand)}`;
+    case 7: return `<b>${esc(p.rules.line)}</b><ul>${p.rules.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>${p.rules.gated ? 'Amazon keeps this category locked until you upload the proof.' : 'Plain home textiles are usually not a locked category on Amazon.'}`;
+    case 8: return `<b>Words that sell:</b> ${esc(p.keywords)}${p.claims ? ' ' + esc(p.claims) : ''}`;
+    case 9: return `<b>${sea ? `${esc(p.port.name)} to New York by sea` : `${esc(p.airport.name)} to New York JFK by air`}:</b> about ${km(Globe.legKm(1))} ${sea ? 'on this illustrative route; six to eight weeks door to Amazon.' : 'along the great circle; fast, and roughly four times the price of sea.'} The likely HS code is ${p.hs[0]} (${esc(p.hs[1])}); your forwarder confirms the full US code.${p.shipNote ? ' ' + esc(p.shipNote) : ''}`;
+    case 10: return `<b>First batch:</b> a few hundred ${esc(p.plural)}. ${p.rules.gated ? 'Your category is gated, so approvals come before the listing goes live.' : 'Your category is usually open to new sellers.'}`;
+    case 11: { const r = calc(); return `<b>One sale at the example price:</b> the customer pays ${usd(S.price.price)}, and about ${inr(r.inrPerUnit)} reaches your bank after Amazon's fees and conversion, before your own costs.`; }
+  }
+  return '';
+}
+function stepMap(n) {
+  const p = P(), tok = viewTok;
+  const V = {
+    1: ['origin', ['maker']], 2: ['india', ['maker'], { clusters: 1 }], 3: ['dc', ['uspto']], 4: ['india', ['dgft', 'maker']],
+    5: ['dc', ['irs']], 6: ['origin', ['maker']], 7: [p.rules.pin ? 'dc' : 'nyc', [p.rules.pin ? 'rules' : 'portus']],
+    8: ['us', ['customer']], 9: ['overview', ['portin', 'portus'], { ride: 1 }], 10: ['us', ['fba', 'customer'], { deliver: 1 }],
+    11: ['overview', ['maker', 'customer'], { money: 1 }]
+  }[n];
+  const o = V[2] || {};
+  mapState({ hi: V[1], clusters: o.clusters, prog: o.ride ? 1 : o.deliver ? 2 : 3, vehicle: o.ride || o.deliver, money: o.money ? 'on' : null, moneyP: 0, coins: true });
+  go(V[0]);
+  const st = Globe.st;
+  if (o.ride) Globe.animate(e => { st.prog = 1 + e; }, 4200).then(() => { if (tok === viewTok) { st.vehicle = false; Globe.redraw(); } });
+  if (o.deliver) Globe.animate(e => { st.prog = 2 + e; }, 2600).then(() => { if (tok === viewTok) { st.vehicle = false; Globe.redraw(); } });
+  if (o.money) Globe.animate(e => { st.moneyP = e; }, 2600).then(() => { if (tok === viewTok) { st.loop = p.maker.ll; Globe.redraw(); } });
+}
+function renderStep(n) {
+  const s = STEPS[n - 1], note = productNote(n);
+  panel.innerHTML = `
+    <button type="button" class="back" id="back">← All 11 steps</button>
+    <div data-side="${s.side}" style="margin-top:.7cqw">
+      <span class="where">Step ${n} · ${SIDE_NAME[s.side]}</span>
+      <h2>${esc(s.title)}</h2>
+      <p class="lede">${esc(s.line)}</p>
+      ${note ? `<div class="note">${note}</div>` : ''}
+      <h3>In plain words</h3>${s.plain.map(t => `<p>${esc(t)}</p>`).join('')}
+      <div class="analogy"><b>Think of it like</b> ${esc(s.analogy)}</div>
+      <h3>Jargon decoded</h3>
+      <dl class="jar">${s.jargon.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      <div class="watch"><b>Watch out:</b> ${esc(s.watch)}</div>
+      <div class="looks"><span class="psub">In the dictionary:</span>${(s.tags || []).map(t => { const g = GLOSS.find(x => x.id === t); return g ? `<button type="button" class="tagl" data-term="${t}">${esc(g.k)}</button>` : ''; }).join('')}</div>
+      <label class="donebox"><input type="checkbox" id="doneBox" ${isDone(n) ? 'checked' : ''}> Mark step ${n} done</label>
+      <div class="nav2">
+        <button type="button" class="btn" id="prevS" ${n === 1 ? 'disabled' : ''}>← ${n > 1 ? 'Step ' + (n - 1) : 'Start'}</button>
+        <button type="button" class="btn pri" id="nextS" ${n === 11 ? 'disabled' : ''}>${n < 11 ? 'Step ' + (n + 1) : 'Done'} →</button>
+      </div>
+    </div>`;
+  $('#back').onclick = () => { S.step = null; render(); };
+  $('#prevS').onclick = () => openStep(n - 1);
+  $('#nextS').onclick = () => openStep(n + 1);
+  $('#doneBox').onchange = e => store.set(doneKey(n), e.target.checked ? '1' : '0');
+  $$('.tagl', panel).forEach(b => b.onclick = () => { S.term = b.dataset.term; setTab('dict'); });
+  stepMap(n);
+  caption(`Step ${n} · ${SIDE_NAME[s.side]}`, stepLine(n), '');
+}
+
+/* ---------- Break it ---------- */
+function breakList() { const p = P(); return BREAKS.map(b => b.id === 'rules' ? { ...b, ...RULE_BREAKS[p.id] } : b); }
+function rerender() { const keep = panel.scrollTop; render(); panel.scrollTop = keep; }
+function renderBreak() {
+  const list = breakList();
+  panel.innerHTML = `<div class="eye">Break it · ${esc(P().short)}</div>
+    <h2>Skip a step. See what goes wrong.</h2>
+    <p class="lede">Each of these is a real way first-time exporters lose a shipment, a payout or an account.</p>
+    ${list.map(b => {
+      const s = STEPS[b.step - 1], on = b.id === S.brk;
+      return `<div class="brkwrap">
+        <button type="button" class="brk" data-side="${s.side}" data-b="${b.id}" aria-pressed="${on}"><span class="sn">Step ${b.step}</span><span>${esc(b.title)}</span></button>
+        ${on ? `<div class="watch"><b>What happens:</b> ${esc(b.what)}</div><div class="analogy"><b>The fix:</b> ${esc(b.fix)}</div>
+        <button type="button" class="btn pri" id="unbreak">Put the step back</button>` : ''}
+      </div>`;
+    }).join('')}`;
+  $$('.brk', panel).forEach(b => b.onclick = () => { S.brk = S.brk === b.dataset.b ? null : b.dataset.b; rerender(); });
+  const u = $('#unbreak'); if (u) u.onclick = () => { S.brk = null; rerender(); };
+  const b = list.find(x => x.id === S.brk), p = P();
+  if (!b) {
+    mapState({ prog: 3 }); go('overview');
+    caption('Break it', 'Every step exists because skipping it costs something.', 'Pick one to see what goes wrong.');
+    return;
+  }
+  const at = { maker: p.maker.ll, portin: pinLL('portin'), portus: pinLL('portus'), fba: PLACES.fba, customer: PLACES.customer }[b.at];
+  mapState({ prog: b.stop ?? 3, vehicle: b.stop != null, broken: { ll: at, label: b.label, sub: `Step ${b.step} skipped` }, money: b.money || null, coins: b.money === 'on' });
+  go({ maker: 'origin', portin: 'portin', portus: 'nyc', fba: 'us', customer: 'us' }[b.at]);
+  caption(`Break it · Step ${b.step}`, b.title, '');
+}
+
+/* ---------- Price it ---------- */
+const FIELDS = [
+  ['price', 'Sale price on Amazon', '$', 4, 60, .5, 'What the US customer pays.'],
+  ['cost', 'Factory cost per unit', '₹', 50, 3000, 10, ''],
+  ['ship', 'Freight to Amazon per unit, by sea', '$', 0, 6, .05, 'Air is roughly four times this.'],
+  ['duty', 'US import duty', '%', 0, 60, 1, 'A placeholder. Duty on Indian goods changed several times in 2025 and 2026, so look up your HTS code.'],
+  ['ref', 'Amazon referral fee', '%', 5, 20, .5, 'About 15% in most categories. Check Amazon’s fee table for yours.'],
+  ['fba', 'FBA fee per unit', '$', 2, 12, .05, 'Set by size and weight.'],
+  ['ads', 'Ad spend per unit sold', '$', 0, 10, .1, ''],
+  ['conv', 'Currency conversion cut', '%', 0, 4, .1, 'Amazon’s converter takes a few percent; other services can be cheaper.'],
+  ['fx', 'Rupees per dollar', '₹', 70, 100, .1, 'Use today’s rate.']
+];
+const fmtField = (u, v) => u === '$' ? usd(v) : u === '₹' ? '₹' + (v >= 100 ? Math.round(v).toLocaleString('en-IN') : v.toFixed(1)) : (+v.toFixed(1)) + '%';
+function hintFor(k, h) {
+  if (k === 'ref' && S.prod === 'pepper') return 'Grocery items priced at $15 or less pay about 8%, above that about 15%. Check Amazon’s fee table.';
+  if (k === 'ship' && S.mode === 'air') return 'You chose air, so the model uses four times this figure.';
+  return h;
+}
+function savePrice() { store.set('gomh:price:' + S.prod, JSON.stringify(S.price)); }
+function renderPrice() {
+  const p = P();
+  panel.innerHTML = `<div class="eye">Price it · ${esc(p.short)}, ${esc(p.price.unit)}</div>
+    <h2>What one sale leaves you</h2>
+    <div class="kpi"><span class="big" id="kP"></span><span class="psub" id="kS"></span></div>
+    <div class="stack" id="stack"></div>
+    <div class="legend" id="legend"></div>
+    <div class="chart" id="chart"></div>
+    <h3>Your numbers <button type="button" class="btn" id="reset">Reset example</button></h3>
+    ${FIELDS.map(([k, lab, u, min, max, step, h]) => `<div class="fld"><label for="f-${k}">${esc(lab)}</label><output id="o-${k}" for="f-${k}"></output>
+      <input type="range" id="f-${k}" data-k="${k}" min="${min}" max="${max}" step="${step}" value="${S.price[k]}">${h ? `<small>${esc(hintFor(k, h))}</small>` : ''}</div>`).join('')}
+    <p class="psub" style="margin-top:.8cqw">Example numbers, not quotes. Your forwarder, Amazon’s fee table and your bank give the real ones.</p>`;
+  $$('input[type=range]', panel).forEach(i => i.oninput = () => { S.price[i.dataset.k] = +i.value; savePrice(); updatePrice(false); });
+  $('#reset').onclick = () => { S.price = { ...P().price }; savePrice(); rerender(); };
+  mapState({ prog: 3, money: 'on', coins: true });
+  go('overview');
+  updatePrice(true);
+}
+function updatePrice(anim) {
+  const v = S.price, r = calc();
+  FIELDS.forEach(([k, , u]) => { const o = $('#o-' + k); if (o) o.textContent = fmtField(u, v[k]); });
+  const kP = $('#kP'); kP.textContent = usd(r.profit); kP.classList.toggle('neg', r.profit < 0);
+  $('#kS').textContent = `per unit (${inr(r.profit * v.fx)}) · ${r.profit < 0 ? 'a loss' : Math.round(r.margin * 100) + '% of the price'}`;
+  const segs = [
+    ['Amazon referral fee', r.refFee, 'var(--sea)'],
+    ['FBA fee', v.fba, 'color-mix(in srgb,var(--sea) 60%,var(--card))'],
+    ['Ads', v.ads, 'color-mix(in srgb,var(--sea) 30%,var(--card))'],
+    ['Currency conversion', r.convFee, 'var(--faint)'],
+    ['Factory cost', r.factory, 'var(--india)'],
+    [S.mode === 'air' ? 'Freight by air' : 'Freight by sea', r.ship, 'color-mix(in srgb,var(--india) 45%,var(--card))'],
+    ['US duty', r.duty, 'var(--abroad)'],
+    ['You keep', Math.max(0, r.profit), 'var(--ok)']
+  ];
+  const total = Math.max(v.price, segs.reduce((a, s) => a + s[1], 0));
+  $('#stack').innerHTML = segs.map(s => `<i style="width:${s[1] / total * 100}%;background:${s[2]}" title="${esc(s[0])}"></i>`).join('');
+  $('#legend').innerHTML = segs.map(s => `<span class="sw" style="background:${s[2]}"></span><span>${esc(s[0])}</span><span class="v">${usd(s[1])}</span>`).join('')
+    + (r.profit < 0 ? `<span class="sw" style="background:var(--warn)"></span><span>Loss per unit</span><span class="v">${usd(r.profit)}</span>` : '');
+  $('#chart').innerHTML = profitChart(r);
+  caption('Price it', r.profit >= 0 ? `At ${usd(v.price)}, you keep ${usd(r.profit)} a unit.` : `At ${usd(v.price)}, every sale loses ${usd(-r.profit)}.`,
+    `Below ${usd(r.be)}, a sale loses money. That is why cheap products rarely work.`, anim);
+}
+function profitChart(r) {
+  const v = S.price, W = 320, H = 136, L = 40, R = 12, T = 18, B = 22;
+  const x0 = 5, x1 = Math.max(45, Math.ceil(v.price / 5) * 5 + 5);
+  const prof = pr => calc({ ...v, price: pr }).profit;
+  const pts = []; for (let x = x0; x <= x1; x += 1) pts.push([x, prof(x)]);
+  const y0 = Math.min(0, pts[0][1]), y1 = Math.max(1, pts[pts.length - 1][1]);
+  const sx = x => L + (x - x0) / (x1 - x0) * (W - L - R), sy = y => T + (y1 - y) / (y1 - y0) * (H - T - B);
+  const span = y1 - y0, step = span > 40 ? 20 : span > 16 ? 10 : span > 6 ? 5 : 2, yt = [];
+  for (let t = Math.ceil(y0 / step) * step; t <= y1 + 1e-9; t += step) yt.push(t);
+  const xt = []; for (let t = 10; t <= x1; t += 10) xt.push(t);
+  const mono = 'font-family="Manrope, system-ui, sans-serif" font-size="9" font-weight="700"';
+  const beIn = r.be > x0 && r.be < x1;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Profit per unit at each sale price. Break-even is ${usd(r.be)}.">
+    <text x="${L}" y="10" ${mono} fill="var(--muted)" letter-spacing="1">PROFIT PER UNIT, BY SALE PRICE</text>
+    ${yt.map(t => `<line x1="${L}" x2="${W - R}" y1="${sy(t)}" y2="${sy(t)}" stroke="var(--line-strong)" stroke-width="${t === 0 ? 1.3 : .6}" ${t === 0 ? '' : 'stroke-dasharray="2 3"'}/>
+      <text x="${L - 5}" y="${sy(t) + 3}" text-anchor="end" ${mono} fill="var(--muted)">${t < 0 ? '−$' + -t : '$' + t}</text>`).join('')}
+    ${xt.map(t => `<text x="${sx(t)}" y="${H - 6}" text-anchor="middle" ${mono} fill="var(--muted)">$${t}</text>`).join('')}
+    <polyline points="${pts.map(([a, b]) => `${sx(a).toFixed(1)},${sy(b).toFixed(1)}`).join(' ')}" fill="none" stroke="var(--sea)" stroke-width="2.2" stroke-linejoin="round"/>
+    ${beIn ? `<line x1="${sx(r.be)}" x2="${sx(r.be)}" y1="${T}" y2="${H - B}" stroke="var(--warn)" stroke-dasharray="3 3"/>
+      <text x="${sx(r.be) + 4}" y="${T + 9}" ${mono} fill="var(--warn)">break-even ${usd(r.be)}</text>` : ''}
+    <circle cx="${sx(v.price)}" cy="${sy(r.profit)}" r="4.5" fill="${r.profit < 0 ? 'var(--warn)' : 'var(--ok)'}" stroke="var(--card)" stroke-width="2"/>
+  </svg>`;
+}
+
+/* ---------- Money home ---------- */
+function moneyTimeline() {
+  const v = S.price, r = calc(), sea = S.mode === 'sea';
+  const units = 300, perDay = 5, value = Math.round(units * v.cost * 1.5);
+  const arrive = sea ? 49 : 10, firstSale = arrive + 5, payouts = [];
+  let sold = 0, cum = 0, closed = null;
+  for (let d = firstSale + 14; d <= 300 && sold < units; d += 14) {
+    const n = Math.min(units - sold, perDay * 14); sold += n; cum += n * Math.max(0, r.inrPerUnit);
+    payouts.push({ d, cum }); if (closed == null && cum >= value) closed = d;
+  }
+  return { units, perDay, value, arrive, payouts, closed, deadline: 270, per: r.inrPerUnit };
+}
+function renderMoney() {
+  const p = P(), v = S.price, r = calc(), t = moneyTimeline();
+  const link = (side, txt, val) => `<div class="link" data-side="${side}"><span class="ic"></span><span>${txt}</span><span class="v">${val}</span></div>`;
+  panel.innerHTML = `<div class="eye">Money home · ${esc(p.short)}</div>
+    <h2>How one sale becomes rupees</h2>
+    <div class="chain">
+      ${link('abroad', `The customer in ${esc(CUSTOMER.short)} pays`, usd(v.price))}
+      ${link('sea', 'Amazon keeps its fees and your ad spend', '−' + usd(r.refFee + v.fba + v.ads))}
+      ${link('sea', 'Payout to you, about every 14 days', usd(r.payout))}
+      ${link('sea', 'Converted to rupees, minus a cut', '−' + usd(r.convFee))}
+      ${link('india', 'Lands in your Indian business account', inr(r.inrPerUnit))}
+      ${link('india', 'Your bank issues a FIRA receipt', 'proof')}
+      ${link('india', 'FIRA + shipping bill, matched on DGFT', 'e-BRC')}
+    </div>
+    <h3>The nine-month clock</h3>
+    <p class="psub">A shipping bill stays open with the central bank until money matching it comes home, within nine months of shipping. This example ships ${t.units} ${esc(p.plural)} declared at ${inr(t.value)}, and sells ${t.perDay} a day.</p>
+    <label for="day" class="psub">Days since the goods left India: <b id="dayOut"></b></label>
+    <input type="range" id="day" min="0" max="300" step="1" value="${S.day}">
+    <div class="clock" id="clock"></div>
+    <div class="status" id="status"></div>`;
+  $('#day').oninput = e => { S.day = +e.target.value; updateMoney(false); };
+  mapState({ prog: 3, money: 'on', coins: true, hi: ['maker', 'customer'] });
+  go('overview');
+  updateMoney(true);
+}
+function updateMoney(anim) {
+  const t = moneyTimeline(), day = S.day, p = P();
+  const home = (t.payouts.filter(x => x.d <= day).pop() || { cum: 0 }).cum;
+  const done = t.closed != null && day >= t.closed;
+  $('#dayOut').textContent = `${day} (${(day / 30).toFixed(1)} months)`;
+  $('#clock').innerHTML = clockSvg(t, day);
+  const st = $('#status');
+  if (done) { st.className = 'status closed'; st.textContent = `Closed on day ${t.closed}. The payouts cover the ${inr(t.value)} on the shipping bill, the e-BRC is generated, and the promise from Step 4 is kept.`; }
+  else if (day >= t.deadline) { st.className = 'status late'; st.textContent = `Nine months have passed and ${inr(t.value - home)} is still missing. Talk to your bank before this blocks the next shipment.`; }
+  else { st.className = 'status open'; st.textContent = `Day ${day}: ${inr(home)} of ${inr(t.value)} is home. The shipment stays open until all of it is matched.`; }
+  Globe.st.loop = done ? p.maker.ll : null; Globe.redraw();
+  caption('Money home', done ? 'Bank receipt plus shipping bill makes an e-BRC. Promise kept.' : 'Goods went out. Now the money has to come home.',
+    `Each sale sends about ${inr(t.per)} back to your bank.`, anim);
+}
+function clockSvg(t, day) {
+  const W = 320, H = 78, L = 10, R = 12, y = 36, sx = d => L + d / 300 * (W - L - R);
+  const mono = 'font-family="Manrope, system-ui, sans-serif" font-size="9" font-weight="700"';
+  const months = [0, 90, 180, 270].map(d => `<line x1="${sx(d)}" x2="${sx(d)}" y1="${y - 4}" y2="${y + 4}" stroke="var(--line-strong)"/>
+    <text x="${sx(d)}" y="${y + 18}" text-anchor="middle" ${mono} fill="var(--muted)">${d / 30} mo</text>`).join('');
+  const dots = t.payouts.map(x => `<circle cx="${sx(x.d)}" cy="${y}" r="3.2" fill="${x.d <= day ? 'var(--india)' : 'var(--card)'}" stroke="var(--india)" stroke-width="1.4"/>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Timeline of payouts over nine months">
+    <line x1="${sx(0)}" x2="${sx(300)}" y1="${y}" y2="${y}" stroke="var(--line)" stroke-width="6" stroke-linecap="round"/>
+    <line x1="${sx(0)}" x2="${sx(day)}" y1="${y}" y2="${y}" stroke="color-mix(in srgb,var(--sea) 45%,var(--card))" stroke-width="6" stroke-linecap="round"/>
+    ${months}
+    <line x1="${sx(t.deadline)}" x2="${sx(t.deadline)}" y1="${y - 20}" y2="${y + 6}" stroke="var(--warn)" stroke-dasharray="3 2"/>
+    <text x="${sx(t.deadline)}" y="${y - 23}" text-anchor="middle" ${mono} fill="var(--warn)">deadline</text>
+    <rect x="${sx(t.arrive) - 3.5}" y="${y - 3.5}" width="7" height="7" fill="var(--sea)"/>
+    <text x="${sx(t.arrive)}" y="${y - 10}" text-anchor="middle" ${mono} fill="var(--sea-ink)">at Amazon</text>
+    ${dots}
+    ${t.closed != null ? `<circle cx="${sx(t.closed)}" cy="${y}" r="6" fill="var(--ok)" stroke="var(--card)" stroke-width="1.5"/>
+      <text x="${sx(t.closed) + (t.closed > 200 ? -8 : 8)}" y="${y - 10}" text-anchor="${t.closed > 200 ? 'end' : 'start'}" ${mono} fill="var(--ok)">e-BRC</text>` : ''}
+    <line x1="${sx(day)}" x2="${sx(day)}" y1="${y - 12}" y2="${y + 12}" stroke="var(--ink)" stroke-width="1.6"/>
+  </svg>`;
+}
+
+/* ---------- Dictionary ---------- */
+function renderDict() {
+  panel.innerHTML = `<div class="eye">Dictionary</div>
+    <h2>Every official word, in plain English</h2>
+    <label class="search">${svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>', 2)}<input type="search" id="q" placeholder="Search, like LUT or Importer of Record" aria-label="Search the dictionary"></label>
+    <div id="terms">${GLOSS.map(t => `<div class="term" id="g-${t.id}" data-side="${t.side}"><div class="k">${esc(t.k)}</div><div class="f">${esc(t.full)}</div><div>${esc(t.v)}</div></div>`).join('')}</div>
+    <p class="psub" id="noHit" hidden>No term matches that. Try a shorter word.</p>`;
+  const q = $('#q');
+  q.oninput = () => {
+    const s = q.value.trim().toLowerCase(); let n = 0;
+    $$('.term', panel).forEach(t => { const on = !s || t.textContent.toLowerCase().includes(s); t.hidden = !on; if (on) n++; });
+    $('#noHit').hidden = n > 0;
+  };
+  if (S.term) {
+    const el = $('#g-' + S.term); S.term = null;
+    if (el) { el.classList.add('hit'); requestAnimationFrame(() => el.scrollIntoView({ block: 'center' })); setTimeout(() => el.classList.remove('hit'), 2600); }
+  }
+  mapState({ prog: 3 }); go('overview');
+  caption('Dictionary', 'Every official term on the journey, decoded.', 'Amber lives in India, blue in the US, teal with Amazon and the shipping in between.');
+}
+
+/* ---------- The guided story (Play) ---------- */
+const T = { i: 0, beats: [], tok: 0, timer: 0, paused: false, t0: 0, left: 0 };
+const alive = tok => tok === T.tok && S.touring;
+const card = (eye, title, body, side) => `<div${side ? ` data-side="${side}"` : ''}><div class="eye">${eye}</div><div class="t">${title}</div>${body || ''}</div>`;
+const stamps = list => `<div class="stamps">${list.map(([t, side], i) => `<span class="stamp land" data-side="${side}" style="animation-delay:${(.35 + i * .45).toFixed(2)}s">${esc(t)}</span>`).join('')}</div>`;
+const kv = rows => `<div class="kv">${rows.map(([k, v]) => `<b>${k}</b><span>${v}</span>`).join('')}</div>`;
+
+function tourBeats() {
+  const p = P(), sea = S.mode === 'sea', r = calc(), v = S.price;
+  const dist = d3.geoDistance(p.maker.ll, PLACES.customer) * 6371, cross = km(Globe.legKm(1));
+  const count = side => STEPS.filter(s => s.side === side).length;
+  const from = sea ? p.port.name : p.airport.name, to = sea ? 'New York' : 'JFK, New York';
+  const crow = { a: p.maker.ll, b: PLACES.customer, text: km(dist) };
+  const beats = [
+    { eye: 'Where it starts', line: `${p.a}, made in ${p.maker.name}.`, sub: p.maker.note,
+      ctx: card('The product', esc(p.name), kv([['Made in', `${esc(p.maker.name)}, ${esc(p.maker.region)}`], ['Kind', esc(p.kind)], ['Sold on', 'Amazon.com']])),
+      run: () => { mapState({ hi: ['maker'], prog: 0 }); go('origin', 2600); } },
+    { eye: 'Where it is going', line: `Its buyer lives in ${CUSTOMER.name}, ${km(dist)} away.`,
+      sub: `Right now it is ${clockIn('Asia/Kolkata')} in ${p.maker.name} and ${clockIn(CUSTOMER.tz)} in ${CUSTOMER.short}.`,
+      run: () => { mapState({ hi: ['maker', 'customer'], prog: 0, crow }); go('overview', 2800); } },
+    { eye: 'The catch', line: 'Amazon can deliver it in two days. Getting it into Amazon is the hard part.',
+      sub: 'Paperwork on two continents, a long crossing, and money that has to find its way home.',
+      run: () => { mapState({ hi: ['customer'], prog: 0, crow }); } },
+    { eye: 'Eleven steps', line: `Eleven steps stand in between: ${count('india')} in India, ${count('sea')} in between, ${count('abroad')} over there.`,
+      sub: 'Each pin marks a place where one of them happens.',
+      ctx: card('Where the steps happen', 'Eleven steps, three places', `<div class="legend3"><div data-side="india"><span class="n">${count('india')}</span>in India</div><div data-side="sea"><span class="n">${count('sea')}</span>online, or on the way</div><div data-side="abroad"><span class="n">${count('abroad')}</span>in the United States</div></div>`),
+      run: () => { mapState({ prog: 0 }); go('overview', 1200); } },
+    { eye: 'Step 1 · Pick', line: p.pick, sub: 'Anything under about fifteen dollars rarely leaves profit once Amazon’s fees are paid.',
+      ctx: card('Fit check', esc(p.short), `<div class="fit">${p.fit.map(([k, ok]) => `<div><span class="mk ${ok ? 'y' : 'n'}">${ok ? '✓' : '✕'}</span>${esc(k)}</div>`).join('')}</div>`),
+      run: () => { mapState({ hi: ['maker'], prog: 0 }); go('origin', 2400); } },
+    { eye: 'Step 2 · The maker', line: 'India makes things in clusters.',
+      sub: `${p.maker.name} for your ${p.short.toLowerCase()}. Moradabad for brass, Kanpur for leather, Tiruppur for textiles, Guntur for spices.`,
+      run: () => { mapState({ hi: ['maker'], clusters: true, prog: 0 }); go('india', 2400); } },
+    { eye: 'Step 3 · The name', line: 'An Indian trademark means nothing in an American court.',
+      sub: 'File with the US trademark office. Amazon accepts an application that is still pending.',
+      ctx: card('Your trademark class', `Class ${p.tm[0]}`, `<p>${esc(p.tm[1])}. There are 45 classes, and each one is a separate fee.</p>`, 'abroad'),
+      run: () => { mapState({ hi: ['uspto'], prog: 0 }); go('dc', 3000); } },
+    { eye: 'Step 4 · India says yes', line: 'Before anything leaves India: an exporter ID, a tax promise, and a bank code.',
+      sub: p.extraIndia || 'An IEC from the DGFT, an LUT on the GST portal, and an AD code from your bank.',
+      ctx: card('Papers, India', p.extraIndia ? 'Four stamps to leave' : 'Three stamps to leave', stamps([['IEC', 'india'], ['GST + LUT', 'india'], ['AD code', 'india']].concat(p.extraIndia ? [['Spices Board', 'india']] : []))),
+      run: () => { mapState({ hi: ['dgft', 'maker'], prog: 0 }); go('india', 3000); } },
+    { eye: 'The promise', line: 'The tax promise lets you skip IGST upfront. In return, the money must come home.',
+      sub: 'Remember this promise. It comes due at the very end.',
+      ctx: card('Letter of Undertaking', 'Promise open', '<p>Filed free on the GST portal and renewed every April. It is closed by an e-BRC in Step 11.</p>', 'india'),
+      run: () => { mapState({ hi: ['maker'], prog: 0 }); go('origin', 2400); } },
+    { eye: 'Step 5 · The shop', line: 'Amazon opens your US shop. The US tax office needs to know you are not American.',
+      sub: 'Skip the W-8BEN form and Amazon may hold back up to 30% of every payout.',
+      ctx: card('Papers, online', 'Three more stamps', stamps([['Global Selling', 'sea'], ['EIN', 'sea'], ['W-8BEN-E', 'sea']])),
+      run: () => { mapState({ hi: ['irs'], prog: 0 }); go('dc', 3000); } },
+    { eye: 'Step 6 · The trap', line: 'File the name first. Print it on the product second. Photograph it third.',
+      sub: `Brand Registry needs real photos with the brand permanently on the product. ${p.brand}`,
+      ctx: card('The order that trips people up', 'File, print, photograph', '<div class="order"><div>Trademark filed in the US</div><div>Brand printed on the first batch</div><div>Photos sent to Brand Registry</div></div>'),
+      run: () => { mapState({ hi: ['maker'], prog: 0 }); go('origin', 3000); } },
+    { eye: 'Step 7 · Their rules', line: p.rules.line,
+      sub: p.rules.gated ? 'Amazon keeps this category locked until you upload the proof.' : 'Every US import must also be marked with its country of origin.',
+      ctx: card(`US rules · ${p.rules.level.toLowerCase()}`, esc(p.short), `<ul style="margin:.2em 0 0;padding-left:1.1em">${p.rules.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`, 'abroad'),
+      run: () => { mapState({ hi: [p.rules.pin ? 'rules' : 'portus'], prog: 0 }); go(p.rules.pin ? 'dc' : 'nyc', 2600); } },
+    { eye: 'Step 8 · The listing', line: p.keywords, sub: 'Main photo on pure white. Brand owners add A+ Content with the maker’s story.',
+      run: () => { mapState({ hi: ['customer'], prog: 0 }); go('us', 2400); } },
+    { eye: 'Step 9 · The crossing', line: sea ? 'By sea: six to eight weeks to the US. Cheap and slow.' : 'By air: fast, and roughly four times the price of sea.',
+      sub: `${from} to ${to}, about ${cross}. Most sellers fly the first small batch and ship later ones by sea.`, dur: 12500,
+      ctx: card(sea ? 'By sea' : 'By air', `${esc(from)} → ${esc(to)}`, kv([['Distance', `about ${cross}${sea ? ', illustrative route' : ''}`], ['Time', sea ? '6 to 8 weeks, door to Amazon' : 'fast, at about 4× the price'], ['HS code', `${p.hs[0]} · ${esc(p.hs[1])}`]]), 'sea'),
+      run: async tok => {
+        mapState({ prog: 0, vehicle: true }); const st = Globe.st;
+        await go('portin', 1800); if (!alive(tok)) return;
+        await Globe.animate(e => { st.prog = e; }, 1600); if (!alive(tok)) return;
+        st.follow = { k: sea ? 2.1 : 1.5 };
+        await Globe.animate(e => { st.prog = 1 + e; }, sea ? 7600 : 5600, false); if (!alive(tok)) return;
+        st.follow = null;
+      } },
+    { eye: 'Customs', line: 'Amazon will never sign for customs. Someone must be the Importer of Record.',
+      sub: `You, with a US tax number and a customs bond, or a broker for a fee. ${p.shipNote || ''}`,
+      ctx: card('On arrival', 'Importer of Record', kv([['Who', 'You, or a customs broker'], ['Needs', 'A US tax number and a customs bond'], ['Never', 'Amazon']]), 'abroad'),
+      run: () => { mapState({ hi: ['portus'], prog: 2, vehicle: true }); go('nyc', 2200); } },
+    { eye: 'Step 10 · Launch', line: 'Start with a few hundred units. Ads and honest reviews get you seen.',
+      sub: 'Amazon stores it, packs it, and delivers it in two days.',
+      ctx: card('Launch small', 'Learn fast', kv([['First batch', `A few hundred ${esc(p.plural)}`], ['Reviews', 'Amazon Vine, up to 30 free units'], ['Delivery', 'Two days']]), 'sea'),
+      run: async tok => {
+        mapState({ hi: ['fba', 'customer'], prog: 2, vehicle: true }); const st = Globe.st;
+        await go('us', 2000); if (!alive(tok)) return;
+        await Globe.animate(e => { st.prog = 2 + e; }, 3200); if (!alive(tok)) return;
+        st.vehicle = false; Globe.redraw();
+      } },
+    { eye: 'Step 11 · Money home', line: `The customer pays ${usd(v.price)}. Amazon keeps its fees and pays you every two weeks.`,
+      sub: `About ${inr(r.inrPerUnit)} of each sale reaches your Indian bank, before your own costs.`, dur: 9000,
+      ctx: card('One sale, example numbers', `${usd(v.price)} → ${inr(r.inrPerUnit)}`, kv([['Customer pays', usd(v.price)], ['Amazon keeps', `${usd(r.refFee + v.fba + v.ads)} in fees and ads`], ['Conversion', usd(r.convFee)], ['Your bank', inr(r.inrPerUnit)]]), 'india'),
+      run: async tok => {
+        mapState({ hi: ['customer', 'maker'], prog: 3, money: 'on', moneyP: 0, coins: true }); const st = Globe.st;
+        await go('overview', 2200); if (!alive(tok)) return;
+        await Globe.animate(e => { st.moneyP = e; }, 3000);
+      } },
+    { eye: 'Promise kept', line: 'Bank receipt plus shipping bill makes an e-BRC. The promise is kept.',
+      sub: 'The money has to come home within nine months of shipping.',
+      ctx: card('Closing the loop', 'FIRA + shipping bill = e-BRC', stamps([['FIRA', 'india'], ['Shipping bill', 'india'], ['e-BRC', 'india'], ['Promise kept', 'ok']])),
+      run: () => { mapState({ hi: ['maker'], prog: 3, money: 'on', coins: true, loop: true }); go('origin', 2400); } },
+    { eye: 'The loop', line: 'Goods went one way. Money and proof came back the other.',
+      sub: 'Now open any step, break one on purpose, or price your own product.', dur: 14000, ctx: promo('story-end'),
+      run: () => { mapState({ prog: 3, money: 'on', coins: true, loop: true }); go('overview', 2800); } }
+  ];
+  return beats.map(b => ({ dur: 7800, ...b }));
+}
+
+function startTour() {
+  if (S.touring) return;
+  S.touring = true; appEl.classList.add('touring');
+  Globe.st.interactive = false; T.paused = false; setPauseIcon();
+  T.beats = tourBeats(); goBeat(0); poke();
+}
+function restartTour() { T.beats = tourBeats(); goBeat(Math.min(T.i, T.beats.length - 1)); }
+function stopTour(rerender = true) {
+  if (!S.touring) return;
+  S.touring = false; T.tok++; clearTimeout(T.timer); clearTimeout(idleT);
+  appEl.classList.remove('touring', 'idle'); $('#ctx').classList.remove('on');
+  Globe.cancel(); Globe.st.interactive = true;
+  if (rerender) render();
+}
+function goBeat(i) {
+  if (i >= T.beats.length) { stopTour(); return; }
+  T.i = Math.max(0, i);
+  const tok = ++T.tok, b = T.beats[T.i], ctx = $('#ctx');
+  clearTimeout(T.timer); Globe.cancel();
+  caption(b.eye, b.line, b.sub);
+  if (b.ctx) { ctx.classList.remove('on'); ctx.innerHTML = b.ctx; void ctx.offsetWidth; ctx.classList.add('on'); }
+  else ctx.classList.remove('on');
+  $('#tDots').innerHTML = T.beats.map((_, j) => `<i class="${j === T.i ? 'on' : j < T.i ? 'done' : ''}"></i>`).join('');
+  b.run(tok);
+  T.left = b.dur; schedule();
+}
+function schedule() {
+  clearTimeout(T.timer); if (T.paused) return;
+  T.t0 = performance.now(); T.timer = setTimeout(() => goBeat(T.i + 1), T.left);
+}
+function togglePause() {
+  T.paused = !T.paused;
+  if (T.paused) { clearTimeout(T.timer); T.left = Math.max(1500, T.left - (performance.now() - T.t0)); } else schedule();
+  setPauseIcon();
+}
+function setPauseIcon() {
+  const b = $('#tPause');
+  b.setAttribute('aria-label', T.paused ? 'Resume' : 'Pause');
+  b.innerHTML = T.paused ? svg('<path d="M7 5l12 7-12 7z" fill="currentColor"/>', 2) : svg('<path d="M9 5v14M15 5v14"/>', 2.4);
+}
+let idleT = 0;
+function poke() { appEl.classList.remove('idle'); clearTimeout(idleT); if (S.touring) idleT = setTimeout(() => appEl.classList.add('idle'), 2500); }
+
+$('#tPrev').onclick = () => goBeat(T.i - 1);
+$('#tNext').onclick = () => goBeat(T.i + 1);
+$('#tPause').onclick = togglePause;
+$('#tExit').onclick = () => stopTour();
+appEl.addEventListener('pointermove', poke);
+document.addEventListener('keydown', e => {
+  if (!S.touring || e.target.closest('input, textarea, select')) return;
+  if (e.key === ' ') { e.preventDefault(); togglePause(); }
+  else if (e.key === 'ArrowRight') goBeat(T.i + 1);
+  else if (e.key === 'ArrowLeft') goBeat(T.i - 1);
+  else if (e.key === 'Escape') stopTour();
+  poke();
+});
+
+/* ---------- Start ---------- */
+async function loadLand() {
+  const base = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/';
+  try { const m = await import(base + 'land-110m.json/+esm'); Globe.setLand(topojson.feature(m.default, m.default.objects.land), null); }
+  catch (e) { console.warn('Could not load coastlines', e); }
+  $('#loading').classList.add('done');
+  try { const m = await import(base + 'land-50m.json/+esm'); Globe.setLand(null, topojson.feature(m.default, m.default.objects.land)); }
+  catch (e) { console.warn('Could not load detailed coastlines', e); }
+}
+function boot() {
+  const savedTheme = store.get('edockTheme');
+  if (savedTheme === 'dark' || savedTheme === 'light') document.documentElement.setAttribute('data-theme', savedTheme);
+  Globe.init(); buildShell(); paintTheme();
+  const h = location.hash.slice(1), saved = store.get('gomh:prod');
+  S.prod = PRODUCTS[h] ? h : (PRODUCTS[saved] ? saved : 'cushion');
+  S.mode = store.get('gomh:mode') === 'air' ? 'air' : 'sea';
+  applyProduct();
+  loadLand();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { Globe.refresh(); placeDrops(); });
+  if (h === 'play') setTimeout(startTour, 900);
+}
+try { boot(); }
+catch (e) { console.error(e); $('#loading').textContent = 'The map could not start. Check your connection and reload.'; }
+</script>
+</html>
