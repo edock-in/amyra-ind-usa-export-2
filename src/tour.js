@@ -159,12 +159,22 @@ document.addEventListener('keydown', e => {
 });
 
 /* ---------- Start ---------- */
+/* The coastlines are data, fetched as JSON and pinned by hash: a changed file on
+   the CDN is refused. (They used to come in as a module, which runs as code.) */
+const LAND = {
+  coarse: ['land-110m.json', 'sha384-5oFOGoMd0tkagYW08lVco4uAi7XDEDBwBxOdeKx+SA1ihbsHiR/aFAJGretluTzG'],
+  fine: ['land-50m.json', 'sha384-c0VeCJd1wVbV5WQZNjf1hcMqPr9QXweEArnbdgS1k75TBNjta2M/NddyAulA/Glb'],
+};
+async function landJson([file, integrity]) {
+  const res = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/' + file, { integrity, mode: 'cors', referrerPolicy: 'no-referrer' });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
 async function loadLand() {
-  const base = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/';
-  try { const m = await import(base + 'land-110m.json/+esm'); Globe.setLand(topojson.feature(m.default, m.default.objects.land), null); }
+  try { const t = await landJson(LAND.coarse); Globe.setLand(topojson.feature(t, t.objects.land), null); }
   catch (e) { console.warn('Could not load coastlines', e); }
   $('#loading').classList.add('done');
-  try { const m = await import(base + 'land-50m.json/+esm'); Globe.setLand(null, topojson.feature(m.default, m.default.objects.land)); }
+  try { const t = await landJson(LAND.fine); Globe.setLand(null, topojson.feature(t, t.objects.land)); }
   catch (e) { console.warn('Could not load detailed coastlines', e); }
 }
 function boot() {

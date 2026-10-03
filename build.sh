@@ -27,8 +27,11 @@ wrap() { # $1 title, $2 description, $3 url
 {
   cat src/head.html
   cat src/body.html
-  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>'
-  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>'
+  # Pinned by hash (cdnjs's published SRI): a changed file on the CDN is refused,
+  # not run. games.edock.io shares a sign-in cookie with every edock.io site, so
+  # nothing from outside may run here unpinned. Bump the hash with the version.
+  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
+  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha512-4UKI/XKm3xrvJ6pZS5oTRvIQGIzZFoXR71rRBb1y2N+PbwAsKa5tPl2J6WvbEvwN3TxQCm8hMzsl/pO+82iRlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>'
   echo '<script>'
   cat src/data-products.js src/data-content.js
   echo '</script>'

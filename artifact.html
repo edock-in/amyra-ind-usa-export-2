@@ -413,8 +413,8 @@ button:disabled{cursor:default;opacity:.4}
     <p>Made by <a href="https://edock.io/?utm_source=amyra-ind-usa-export-2&amp;utm_medium=game&amp;utm_campaign=edock-games&amp;utm_content=footer" target="_blank" rel="noopener">Edock</a> · <a href="https://github.com/edock-in/amyra-ind-usa-export-2" target="_blank" rel="noopener">Open source on GitHub</a> · Coastlines: Natural Earth</p>
   </footer>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha512-4UKI/XKm3xrvJ6pZS5oTRvIQGIzZFoXR71rRBb1y2N+PbwAsKa5tPl2J6WvbEvwN3TxQCm8hMzsl/pO+82iRlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 /* ---------- Places, routes, products ---------- */
 window.G = window.G || {};
@@ -1698,12 +1698,22 @@ document.addEventListener('keydown', e => {
 });
 
 /* ---------- Start ---------- */
+/* The coastlines are data, fetched as JSON and pinned by hash: a changed file on
+   the CDN is refused. (They used to come in as a module, which runs as code.) */
+const LAND = {
+  coarse: ['land-110m.json', 'sha384-5oFOGoMd0tkagYW08lVco4uAi7XDEDBwBxOdeKx+SA1ihbsHiR/aFAJGretluTzG'],
+  fine: ['land-50m.json', 'sha384-c0VeCJd1wVbV5WQZNjf1hcMqPr9QXweEArnbdgS1k75TBNjta2M/NddyAulA/Glb'],
+};
+async function landJson([file, integrity]) {
+  const res = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/' + file, { integrity, mode: 'cors', referrerPolicy: 'no-referrer' });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
 async function loadLand() {
-  const base = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/';
-  try { const m = await import(base + 'land-110m.json/+esm'); Globe.setLand(topojson.feature(m.default, m.default.objects.land), null); }
+  try { const t = await landJson(LAND.coarse); Globe.setLand(topojson.feature(t, t.objects.land), null); }
   catch (e) { console.warn('Could not load coastlines', e); }
   $('#loading').classList.add('done');
-  try { const m = await import(base + 'land-50m.json/+esm'); Globe.setLand(null, topojson.feature(m.default, m.default.objects.land)); }
+  try { const t = await landJson(LAND.fine); Globe.setLand(null, topojson.feature(t, t.objects.land)); }
   catch (e) { console.warn('Could not load detailed coastlines', e); }
 }
 function boot() {
